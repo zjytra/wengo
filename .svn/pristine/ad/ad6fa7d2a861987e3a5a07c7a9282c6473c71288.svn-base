@@ -1,0 +1,149 @@
+/*
+创建时间: 2020/2/3
+作者: zjy
+功能介绍:
+事件系统
+*/
+
+package dispatch
+
+import (
+	"errors"
+	"fmt"
+	"github.com/panjf2000/ants"
+	"github.com/wengo/model"
+	"github.com/wengo/network"
+	"github.com/wengo/xlog"
+)
+
+type DispatchNoticeFun func(interface{}) error // 对应的解析函数
+
+
+const (
+	Event_NONE          = 0
+	Timer_Event         = 1 // 定时器事件
+	NetWorkAccept_Event = 2 // 客户端网络连接事件
+	NetWorkRead_Event   = 3 // 客户端网络读取事件
+	NetWorkClose_Event  = 4 // 客户端网络关闭
+	ServiceLink_Event   = 5 // 服务器网络连接事件
+	ServiceMsg_Event    = 6 // 服务器网络读取事件
+	ServiceClose_Event  = 7 // 服务器网络关闭事件
+	DBQuerey_Event      = 8 // 数据库查询事件
+	DBWrite_Event       = 9 // 数据库写事件事件
+	RedisResult_Event   = 10 // redis结果事件
+	DisPatch_max        = 11
+)
+
+//事件字符串名称
+var EventStrArr []string
+
+// 处理消息的函数对象
+type HandleMsg func(conn network.Conner, msgdata []byte) error
+
+type DispatchSys struct {
+	qet               *QueueEvent
+	netObserver       network.NetWorkObserver
+	serviceNet        network.ServiceNetEvent
+	endFlag           *model.AtomicBool
+	disPatchEventFuns []DispatchNoticeFun
+	eventDatapool     *EventDataPool
+}
+
+// go自动调用 初始化管理变量
+func init() {
+	// DispSys = NewDispatchSys()
+}
+
+func NewDispatchSys(pool   *ants.Pool) *DispatchSys {
+	if pool == nil {
+		return nil
+	}
+	disp := new(DispatchSys)
+	disp.qet = NewQueueEvent(pool)
+	disp.qet.AddEventDealer(disp.OnQueueEvent) //添加处理函数 一个处理函数就是单线程处理
+	disp.eventDatapool = NewEventDataPool()
+	disp.init()
+	return disp
+}
+
+func (this *DispatchSys) init() {
+	this.endFlag = model.NewAtomicBool()
+	this.endFlag.SetFalse()
+	this.InitEventFunc()
+	this.InitEventName()
+}
+
+//注册事件处理函数
+func (this *DispatchSys) InitEventFunc() {
+	this.disPatchEventFuns = make([]DispatchNoticeFun, DisPatch_max)
+	this.RegisterDispatchEvent(Timer_Event, this.OnEventTimer)
+	this.RegisterDispatchEvent(NetWorkAccept_Event, this.NoticeNetWorkAccept)
+	this.RegisterDispatchEvent(NetWorkRead_Event, this.NoticeNetWorkRead)
+	this.RegisterDispatchEvent(NetWorkClose_Event, this.NoticeNetWorkClose)
+	this.RegisterDispatchEvent(ServiceLink_Event, this.NoticeServiceLink)
+	this.RegisterDispatchEvent(ServiceMsg_Event, this.NoticeServiceMsg)
+	this.RegisterDispatchEvent(ServiceClose_Event, this.NoticeServiceClose)
+	this.RegisterDispatchEvent(DBQuerey_Event, this.NoticeDBQuerey)
+	this.RegisterDispatchEvent(DBWrite_Event, this.NoticeDBWrite)
+}
+
+//映射事件名称
+func (this *DispatchSys) InitEventName() {
+	EventStrArr = make([]string, DisPatch_max )
+	EventStrArr[Event_NONE] = "Event_NONE"
+	EventStrArr[Timer_Event] = "Timer_Event"
+	EventStrArr[NetWorkAccept_Event] = "NetWorkAccept_Even"
+	EventStrArr[NetWorkRead_Event] = "NetWorkRead_Event"
+	EventStrArr[NetWorkClose_Event] = "NetWorkClose_Event"
+	EventStrArr[ServiceLink_Event] = "ServiceLink_Event"
+	EventStrArr[ServiceMsg_Event] = "ServiceMsg_Event"
+	EventStrArr[ServiceClose_Event] = "ServiceClose_Event"
+	EventStrArr[DBQuerey_Event] = "DBQuerey_Event"
+	EventStrArr[DBWrite_Event] = "DBWrite_Event"
+	EventStrArr[RedisResult_Event] = "RedisResult_Event"
+}
+
+
+func (this *DispatchSys) RegisterDispatchEvent(event int, noticeFun DispatchNoticeFun) {
+	this.disPatchEventFuns[event] = noticeFun
+}
+
+// 投递定时器事件
+func (this *DispatchSys) PostTimerEvent(cb func()) error {
+	if this.endFlag.IsTrue() {
+		return  errors.New("PostTimerEvent已经关闭调度系统")
+	}
+	data := this.eventDatapool.GetDisPatchDataByPool(Timer_Event, cb)
+	if data == nil {
+		return errors.New("PostTimerEvent data nil")
+	}
+	this.qet.AddEvent(data)
+	return nil
+}
+
+//队列事件回调
+func (this *DispatchSys) OnQueueEvent(data *EventData) {
+	
+	if data.DipatchType < Event_NONE || data.DipatchType >= DisPatch_max {
+		xlog.ErrorLogNoInScene( "DipatchType = %d 未找到处理函数", data.DipatchType)
+		return
+	}
+	
+	xlog.DebugLogNoInScene(EventStrArr[data.DipatchType])
+		// 查找对应的方法处理数据
+	eventFun := this.disPatchEventFuns[data.DipatchType]
+	if eventFun != nil {
+		erro := eventFun(data.Val)
+		if erro != nil {
+			xlog.DebugLogNoInScene( " paseFun DipatchType = %d, err %v", data.DipatchType, erro)
+		}
+	}
+	this.eventDatapool.Put(data) // 放回到池子
+}
+
+// 关闭系统
+func (this *DispatchSys) Release() {
+	this.endFlag.SetTrue()
+	this.qet.Release()
+	fmt.Println("DispatchSys Release")
+}

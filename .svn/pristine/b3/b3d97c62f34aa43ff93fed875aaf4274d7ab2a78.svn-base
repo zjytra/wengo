@@ -1,0 +1,112 @@
+/*
+创建时间: 2020/5/2
+作者: zjy
+功能介绍:
+
+*/
+
+package apploginsv
+
+import (
+	"errors"
+	"github.com/golang/protobuf/proto"
+	"github.com/wengo/app/datacenter/dcmodel"
+	"github.com/wengo/appdata"
+	"github.com/wengo/cmdconst"
+	"github.com/wengo/cmdconst/cmddatacenter"
+	"github.com/wengo/network"
+	"github.com/wengo/protobuf/pb/common_proto"
+	"github.com/wengo/protobuf/pb/datacenter_proto"
+	"github.com/wengo/xlog"
+)
+
+//连接到数据服务器
+func ConnectDCServerRepsn(conn network.Conner,msgdata []byte) error{
+	restcode := &common_proto.RestInt32CodeMsg{}
+	erro := proto.Unmarshal(msgdata,restcode)
+	if erro != nil {
+		xlog.ErrorLogNoInScene("ConnectDCServerRepsn %v", erro)
+		return erro
+	}
+	
+	if restcode.RestCode != dcmodel.Link_Server_Succeed {
+		return errors.New("连接数据中心失败")
+	}
+	
+	serverInfo := &datacenter_proto.ServerInfoMsg{
+		AppId:   appdata.NetConf.App_id, //serid
+		AppKind: appdata.NetConf.App_kind,
+		OutAddr: appdata.NetConf.Out_addr,
+		OutProt: appdata.NetConf.Out_prot,
+	}
+	xlog.DebugLogNoInScene("连接数据中心成功 发送服务器信息到中心服",serverInfo)
+	erro = conn.WritePBMsg(cmdconst.Main_DataCenter, cmddatacenter.Sub_Req_RegisterServer,serverInfo)
+	if erro != nil {
+		conn.Close()
+		return nil
+	}
+
+	return  erro
+}
+
+//注册服务器回复
+func RegisterServerRepsn(conn network.Conner,msgdata []byte) error{
+	restcode := &common_proto.RestInt32CodeMsg{}
+	erro := proto.Unmarshal(msgdata,restcode)
+	if erro != nil {
+		xlog.ErrorLogNoInScene("RegisterServerRepsn %v", erro)
+		return erro
+	}
+	
+	xlog.DebugLogNoInScene("发送服务器信息到中心服  回复%v",restcode.RestCode)
+	if restcode.RestCode != dcmodel.Register_Server_Succeed { //Register_Server_Succeed
+		conn.Close()
+		return errors.New("RegisterServerRepsn 失败")
+	}
+
+	return  erro
+}
+
+//注册服务器回复
+func RepsnDataCenterHeartBeat(conn network.Conner,msgdata []byte) error{
+	restcode := &common_proto.RestInt32CodeMsg{}
+	erro := proto.Unmarshal(msgdata,restcode)
+	if erro != nil {
+		xlog.ErrorLogNoInScene( "RepsnDataCenterHeartBeat %v", erro.Error())
+		return erro
+	}
+	//xlog.DebugLogNoInScene("心跳回复%v",restcode.RestCode)
+	if restcode.RestCode != 1 {
+		conn.Close()
+		return errors.New("RepsnDataCenterHeartBeat 失败")
+	}
+	
+	return  erro
+}
+
+//数据中心发送关闭远端连接
+func DCLSCloseFarEndConn(conn network.Conner, msgdata []byte) error {
+	closeClient :=  &datacenter_proto.CloseClientLinkMsg{}
+	erro := proto.Unmarshal(msgdata,closeClient)
+	if erro != nil {
+		xlog.ErrorLogNoInScene( "DCLSCloseFarEndConn %v", erro.Error())
+		return erro
+	}
+	//连接id为零
+	if closeClient.AccountId == 0 {
+		xlog.WarningLogNoInScene( "中心服请求关闭连接为0")
+		return nil
+	}
+	connID := pLoginAccountMgr.GetConnIDByAccountID(closeClient.AccountId)
+	if connID == 0 {
+		return nil
+	}
+	Client.tcpServer.CloseConnID(connID)
+	return nil
+}
+
+func DCLSGateWayInfo(conn network.Conner, msgdata []byte) error {
+	xlog.WarningLogNoInScene( "DCLSGateWayInfo")
+	
+	return nil
+}

@@ -1,0 +1,8 @@
+//生成的文件建议不要改动,详见mysql-struct-maker.go ParseColumn方法源码生成格式 
+package dbmodels 
+
+type Testtbale struct {
+	IntTest uint64 `sql:"IntTest"` // 数据库注释: 
+ 	Str string `sql:"Str"` // 数据库注释:“sql” 
+ 	Ttt int32 `sql:"ttt"` // 数据库注释: 
+ }

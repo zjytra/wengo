@@ -1,0 +1,17 @@
+{
+  "redis"  :
+  [
+    {
+      "dbname" : "wode",
+      "dbport" : "3306",
+      "dbpwd" : "zjy0822",
+      "ismain" : "1"
+    },
+    {
+      "dbname" : "wode",
+      "dbport" : "3306",
+      "dbpwd" : "zjy0822",
+      "ismain" : "1"
+    }
+  ]
+}

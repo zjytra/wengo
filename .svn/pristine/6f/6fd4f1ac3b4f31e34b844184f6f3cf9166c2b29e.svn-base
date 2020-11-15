@@ -1,0 +1,57 @@
+/*
+创建时间: 2019/11/23
+作者: zjy
+功能介绍:
+队列结构,对标准库列表封装
+*/
+
+package queue
+
+import (
+	"container/list"
+	"errors"
+	"fmt"
+)
+
+type Queue struct {
+	qlist  *list.List
+}
+
+// 队列构造函数
+// return 返回队列
+func NewQueue() (queue *Queue) {
+	queue = new(Queue)
+	queue.qlist = list.New()
+	return queue
+}
+
+//向队列中添加数据
+func (q *Queue)PushBack(v interface{})  {
+	q.qlist.PushBack(v)
+}
+
+func (q *Queue)Len()  int {
+	return q.qlist.Len()
+}
+
+func (q *Queue)Front()  *list.Element{
+	if q.Len()  == 0 {
+		fmt.Println("Front q is nil")
+		return nil
+	}
+	return q.qlist.Front()
+}
+
+func (q *Queue)PopFront() (interface{}, error)  {
+	if q.Len()  == 0 {
+		return  nil,errors.New("Queue Empty")
+	}
+	return 	q.qlist.Remove(q.qlist.Front()),nil
+}
+
+func (q *Queue)Clear() {
+	for  i, e := q.qlist.Len(), q.qlist.Front(); i > 0; i, e = i-1, e.Next() {
+		q.qlist.Remove(e)
+	}
+	q.qlist = nil
+}

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f6f2691c-2306-428a-9d3b-969cd0a26cf1" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GOROOT" path="D:\work\go" />
+  <component name="ProjectId" id="1gJnNuBbysCnPKgADw3Wz3a6lo2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/main.go" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RunManager" selected="Go Build.go build center">
+    <configuration name="go build center" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="wengo" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <parameters value="-AppID=15" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/center.go" />
+      <package value="github.com/wengo" />
+      <directory value="$PROJECT_DIR$/" />
+      <output_directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+      <module name="wengo" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <parameters value="-AppID=1" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/client.go" />
+      <package value="github.com/wengo" />
+      <directory value="$PROJECT_DIR$/" />
+      <output_directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build lgsv.go" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="wengo" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <parameters value="-AppID=12" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <package value="github.com/wengo" />
+      <directory value="$PROJECT_DIR$/" />
+      <output_directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Go Build.go build lgsv.go" />
+      <item itemvalue="Go Build.go build center" />
+      <item itemvalue="Go Build.go build client" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build client" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="778" y="323" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1597844002270">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="778" y="323" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597844002270" />
+    <state x="656" y="144" key="#go_build_client" timestamp="1597842539358">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="144" key="#go_build_client/0.0.1920.1040@0.0.1920.1040" timestamp="1597842539358" />
+    <state x="817" y="266" key="EnvironmentVariablesDialog" timestamp="1597842513412">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="817" y="266" key="EnvironmentVariablesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597842513412" />
+    <state x="739" y="275" key="FileChooserDialogImpl" timestamp="1597842985202">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1597842985202" />
+    <state width="1877" height="259" key="GridCell.Tab.-1.bottom" timestamp="1597843971056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.-1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597843971056" />
+    <state width="1877" height="259" key="GridCell.Tab.-1.center" timestamp="1597843971056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.-1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597843971056" />
+    <state width="1877" height="259" key="GridCell.Tab.-1.left" timestamp="1597843971056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.-1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597843971056" />
+    <state width="1877" height="259" key="GridCell.Tab.-1.right" timestamp="1597843971056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.-1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597843971056" />
+    <state width="1877" height="259" key="GridCell.Tab.0.bottom" timestamp="1597844114147">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597844114147" />
+    <state width="1877" height="259" key="GridCell.Tab.0.center" timestamp="1597844114147">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597844114147" />
+    <state width="1877" height="259" key="GridCell.Tab.0.left" timestamp="1597844114147">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597844114147" />
+    <state width="1877" height="259" key="GridCell.Tab.0.right" timestamp="1597844114147">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597844114147" />
+    <state width="1877" height="259" key="GridCell.Tab.1.bottom" timestamp="1597844114148">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597844114148" />
+    <state width="1877" height="259" key="GridCell.Tab.1.center" timestamp="1597844114147">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597844114147" />
+    <state width="1877" height="259" key="GridCell.Tab.1.left" timestamp="1597844114147">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597844114147" />
+    <state width="1877" height="259" key="GridCell.Tab.1.right" timestamp="1597844114147">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597844114147" />
+    <state x="461" y="164" key="SettingsEditor" timestamp="1597843935712">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1597843935712" />
+    <state x="662" y="121" width="596" height="798" key="find.popup" timestamp="1597844150322">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="662" y="121" width="596" height="798" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1597844150322" />
+  </component>
+</project>

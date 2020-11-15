@@ -1,0 +1,24 @@
+/*
+创建时间: 2020/2/11
+作者: zjy
+功能介绍:
+
+*/
+
+package csvdata
+
+import (
+	"fmt"
+	"github.com/wengo/xutil"
+)
+
+var (
+	csvPath string
+)
+
+func SetCsvPath(csvpath string) {
+	if xutil.StringIsNil(csvpath) {
+		fmt.Println("csvpath is nil")
+	}
+	csvPath = csvpath
+}

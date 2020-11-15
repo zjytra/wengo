@@ -1,0 +1,36 @@
+package datacenter
+
+import (
+	"github.com/golang/protobuf/proto"
+	"github.com/wengo/cmdconst"
+	"github.com/wengo/cmdconst/cmdaccount"
+	"github.com/wengo/msgcode"
+	"github.com/wengo/network"
+	"github.com/wengo/protobuf/pb/account_proto"
+	"github.com/wengo/protobuf/pb/dcaccount_proto"
+	"github.com/wengo/xlog"
+)
+
+//登录向中心服务器请求账号创建
+func LSDCRegisterAccountMsgHandler(conn network.Conner, msgdata []byte) error {
+	regAccout := &dcaccount_proto.LS_DC_ReqRegisterAccoutMsg{}
+	erro := proto.Unmarshal(msgdata, regAccout)
+	if erro != nil {
+		xlog.ErrorLogNoInScene( "ServerHeartBeat %v", erro)
+		return erro
+	}
+
+	Paccounts := PaccountMgr.GetAccountByUserName(regAccout.Username)
+	if Paccounts != nil  {	//账号已经存在
+		reqCode := &account_proto.RespnRegisterAccoutMsg{
+			ClientConnID: regAccout.ClientConnID,
+			ResCode: msgcode.RegisterAccountCode_IsExsist,
+		}
+		conn.WritePBMsg(cmdconst.Main_Account,cmdaccount.Sub_DC_LS_RegisterAccount,reqCode)
+	 return erro
+	}
+	//投递到数据库查询账号
+	
+	
+	return erro
+}

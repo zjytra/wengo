@@ -1,0 +1,84 @@
+/*
+创建时间: 2020/5/17
+作者: zjy
+功能介绍:
+服务器之间的消息通信
+*/
+
+package datacenter
+
+import (
+	"errors"
+	"fmt"
+	"github.com/golang/protobuf/proto"
+	"github.com/wengo/cmdconst"
+	"github.com/wengo/cmdconst/cmddatacenter"
+	"github.com/wengo/csvdata"
+	"github.com/wengo/model"
+	"github.com/wengo/network"
+	"github.com/wengo/protobuf/pb/common_proto"
+	"github.com/wengo/protobuf/pb/datacenter_proto"
+	"github.com/wengo/xlog"
+)
+
+// 注册服务器
+func ReqRegisterServer(conn network.Conner, msgdata []byte) error {
+	serverInfo := &datacenter_proto.ServerInfoMsg{}
+	erro := proto.Unmarshal(msgdata, serverInfo)
+	if erro != nil {
+		xlog.ErrorLogNoInScene( "ReqRegisterServer %v", erro)
+		return erro
+	}
+	// 配置没有找到证明没有配置这个服务器
+	restcode := &common_proto.RestInt32CodeMsg{}
+	netConf := csvdata.GetNetworkconfPtr(serverInfo.AppId)
+	if netConf == nil {
+		restcode.RestCode = model.Register_Server_NotFindConf
+		erro =conn.WritePBMsg( cmdconst.Main_DataCenter, cmddatacenter.Sub_Req_RegisterServer, restcode)
+		conn.Close()
+		return errors.New(fmt.Sprintf(" 未找到 serverInfo.AppId = %v的配置",serverInfo.AppId))
+	}
+	
+	serverInfoModel := &model.SeverInfoModel{
+		AppId:   serverInfo.AppId,
+		AppKind: serverInfo.AppKind,
+		OutAddr: serverInfo.OutAddr,
+		OutProt: serverInfo.OutProt,
+		ConnID:  conn.GetConnID(),
+	}
+	// 查询内存中是否有这个注册用户
+	isOk := AddServerInfo( serverInfoModel)
+	if !isOk {
+		// 同一個ServerID已经被注册
+		restcode.RestCode = model.Register_Server_Exist // 服务器已经存在
+	} else {
+		restcode.RestCode = model.Register_Server_Succeed //1成功
+	}
+	msg ,erro:= proto.Marshal(restcode)
+	erro = PdataCenter.tcpserver.WriteOneMsgByConn(conn,cmdconst.Main_DataCenter, cmddatacenter.Sub_Repsn_RegisterServer, msg)
+	// erro = netmsgsys.SendMsg(conn, cmdconst.Main_DataCenter, cmddatacenter.Sub_Req_RegisterServer, restcode)
+	if !isOk {
+		conn.Close()
+		return  errors.New(fmt.Sprintf("同一個ServerID %v已经被注册",serverInfo.AppId))
+	}
+	// 如果连接进来的是登陆服需要发送 gatesver 给他
+	if serverInfo.AppKind == model.APP_LoginServer {
+		
+	}
+	
+	return erro
+}
+
+// 接收其他服務器心跳
+func ServerHeartBeat(conn network.Conner, msgdata []byte) error {
+	syerSysInfo := &datacenter_proto.ServerSysInfo{}
+	erro := proto.Unmarshal(msgdata, syerSysInfo)
+	if erro != nil {
+		xlog.ErrorLogNoInScene( "ServerHeartBeat %v", erro)
+		return erro
+	}
+	restcode := &common_proto.RestInt32CodeMsg{}
+	restcode.RestCode = 1
+	erro = conn.WritePBMsg(cmdconst.Main_DataCenter, cmddatacenter.Sub_Repsn_Server_HeartBeat, restcode)
+	return erro
+}

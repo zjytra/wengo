@@ -1,0 +1,433 @@
+调试|2020-08-05 22:40:33.056	TCPServer start
+调试|2020-08-05 22:40:33.064	TCPServer listen Addr:[::]:20002
+调试|2020-08-05 22:40:33.064	invalid ConnectInterval, reset to 5s
+调试|2020-08-05 22:40:33.064	invalid PendingWriteNum, reset to 100
+调试|2020-08-05 22:40:33.064	client.Addr connet 127.0.0.1:20005 
+调试|2020-08-05 22:40:35.077	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:40:42.095	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:40:49.104	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:40:53.065	Timer_Event
+错误|2020-08-05 22:40:53.066	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:40:53.066	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:40:56.115	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:41:03.145	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:41:10.196	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:41:13.064	Timer_Event
+错误|2020-08-05 22:41:13.064	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:41:13.064	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:41:17.217	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:41:24.265	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:41:31.295	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:41:33.064	Timer_Event
+错误|2020-08-05 22:41:33.064	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:41:33.064	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:41:38.336	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:41:45.377	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:41:52.405	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:41:53.064	Timer_Event
+错误|2020-08-05 22:41:53.064	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:41:53.064	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:41:59.427	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:42:06.456	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:42:13.064	Timer_Event
+错误|2020-08-05 22:42:13.064	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:42:13.064	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:42:13.486	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:42:20.526	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:42:27.555	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:42:33.065	Timer_Event
+错误|2020-08-05 22:42:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:42:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:42:34.585	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:42:41.625	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:42:48.646	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:42:53.065	Timer_Event
+错误|2020-08-05 22:42:53.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:42:53.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:42:55.686	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:43:02.727	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:43:09.767	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:43:13.065	Timer_Event
+错误|2020-08-05 22:43:13.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:43:13.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:43:16.805	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:43:23.847	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:43:30.878	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:43:33.065	Timer_Event
+错误|2020-08-05 22:43:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:43:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:43:37.916	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:43:44.946	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:43:51.985	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:43:53.064	Timer_Event
+错误|2020-08-05 22:43:53.064	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:43:53.064	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:43:59.016	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:44:06.056	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:44:13.064	Timer_Event
+错误|2020-08-05 22:44:13.064	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:44:13.064	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:44:13.089	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:44:20.097	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:44:27.116	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:44:33.065	Timer_Event
+错误|2020-08-05 22:44:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:44:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:44:34.155	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:44:41.176	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:44:48.225	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:44:53.064	Timer_Event
+错误|2020-08-05 22:44:53.064	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:44:53.064	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:44:55.255	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:45:02.286	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:45:09.306	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:45:13.126	Timer_Event
+错误|2020-08-05 22:45:13.126	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:45:13.126	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:45:16.345	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:45:23.396	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:45:30.436	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:45:33.065	Timer_Event
+错误|2020-08-05 22:45:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:45:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:45:37.446	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:45:44.475	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:45:51.527	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:45:53.065	Timer_Event
+错误|2020-08-05 22:45:53.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:45:53.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:45:58.565	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:46:05.577	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:46:12.626	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:46:13.065	Timer_Event
+错误|2020-08-05 22:46:13.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:46:13.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:46:19.665	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:46:26.715	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:46:33.064	Timer_Event
+错误|2020-08-05 22:46:33.064	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:46:33.064	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:46:33.737	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:46:40.757	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:46:47.786	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:46:53.064	Timer_Event
+错误|2020-08-05 22:46:53.064	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:46:53.064	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:46:54.806	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:47:01.836	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:47:08.865	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:47:13.065	Timer_Event
+错误|2020-08-05 22:47:13.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:47:13.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:47:15.887	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:47:22.926	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:47:29.947	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:47:33.065	Timer_Event
+错误|2020-08-05 22:47:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:47:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:47:36.987	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:47:44.025	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:47:51.055	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:47:53.065	Timer_Event
+错误|2020-08-05 22:47:53.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:47:53.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:47:58.077	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:48:05.107	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:48:12.117	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:48:13.064	Timer_Event
+错误|2020-08-05 22:48:13.064	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:48:13.064	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:48:19.136	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:48:26.167	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:48:33.065	Timer_Event
+错误|2020-08-05 22:48:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:48:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:48:33.200	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:48:40.215	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:48:47.239	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:48:53.064	Timer_Event
+错误|2020-08-05 22:48:53.064	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:48:53.064	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:48:54.275	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:49:01.316	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:49:08.347	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:49:13.064	Timer_Event
+错误|2020-08-05 22:49:13.064	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:49:13.064	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:49:15.385	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:49:22.425	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:49:29.445	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:49:33.065	Timer_Event
+错误|2020-08-05 22:49:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:49:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:49:36.465	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:49:43.495	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:49:50.545	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:49:53.064	Timer_Event
+错误|2020-08-05 22:49:53.064	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:49:53.064	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:49:57.557	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:50:04.697	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:50:11.737	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:50:13.064	Timer_Event
+错误|2020-08-05 22:50:13.064	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:50:13.064	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:50:18.777	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:50:25.817	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:50:32.847	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:50:33.085	Timer_Event
+错误|2020-08-05 22:50:33.085	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:50:33.085	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:50:39.877	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:50:46.916	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:50:53.064	Timer_Event
+错误|2020-08-05 22:50:53.064	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:50:53.064	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:50:53.940	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:51:00.957	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:51:07.987	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:51:13.065	Timer_Event
+错误|2020-08-05 22:51:13.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:51:13.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:51:15.026	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:51:22.055	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:51:29.076	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:51:33.064	Timer_Event
+错误|2020-08-05 22:51:33.064	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:51:33.064	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:51:36.105	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:51:43.145	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:51:50.186	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:51:53.064	Timer_Event
+错误|2020-08-05 22:51:53.064	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:51:53.064	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:51:57.207	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:52:04.235	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:52:11.257	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:52:13.065	Timer_Event
+错误|2020-08-05 22:52:13.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:52:13.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:52:18.286	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:52:25.305	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:52:32.336	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:52:33.066	Timer_Event
+错误|2020-08-05 22:52:33.066	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:52:33.066	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:52:39.377	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:52:46.406	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:52:53.066	Timer_Event
+错误|2020-08-05 22:52:53.066	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:52:53.066	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:52:53.413	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:53:00.427	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:53:07.448	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:53:13.065	Timer_Event
+错误|2020-08-05 22:53:13.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:53:13.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:53:14.459	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:53:21.487	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:53:28.498	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:53:33.065	Timer_Event
+错误|2020-08-05 22:53:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:53:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:53:35.522	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:53:42.536	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:53:49.550	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:53:53.065	Timer_Event
+错误|2020-08-05 22:53:53.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:53:53.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:53:56.559	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:54:03.565	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:54:10.568	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:54:13.065	Timer_Event
+错误|2020-08-05 22:54:13.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:54:13.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:54:17.582	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:54:24.586	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:54:31.606	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:54:33.065	Timer_Event
+错误|2020-08-05 22:54:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:54:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:54:38.635	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:54:45.665	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:54:52.681	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:54:53.065	Timer_Event
+错误|2020-08-05 22:54:53.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:54:53.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:54:59.697	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:55:06.706	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:55:13.065	Timer_Event
+错误|2020-08-05 22:55:13.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:55:13.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:55:13.709	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:55:20.718	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:55:27.722	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:55:33.065	Timer_Event
+错误|2020-08-05 22:55:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:55:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:55:34.729	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:55:41.758	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:55:48.787	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:55:53.065	Timer_Event
+错误|2020-08-05 22:55:53.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:55:53.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:55:55.817	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:56:02.845	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:56:09.876	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:56:13.065	Timer_Event
+错误|2020-08-05 22:56:13.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:56:13.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:56:16.889	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:56:23.897	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:56:30.910	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:56:33.065	Timer_Event
+错误|2020-08-05 22:56:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:56:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:56:37.928	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:56:44.966	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:56:52.026	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:56:53.065	Timer_Event
+错误|2020-08-05 22:56:53.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:56:53.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:56:59.046	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:57:06.060	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:57:13.065	Timer_Event
+错误|2020-08-05 22:57:13.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:57:13.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:57:13.066	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:57:20.071	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:57:27.073	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:57:33.065	Timer_Event
+错误|2020-08-05 22:57:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:57:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:57:34.077	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:57:41.097	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:57:48.116	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:57:53.065	Timer_Event
+错误|2020-08-05 22:57:53.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:57:53.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:57:55.120	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:58:02.136	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:58:09.140	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:58:13.065	Timer_Event
+错误|2020-08-05 22:58:13.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:58:13.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:58:16.148	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:58:23.153	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:58:30.159	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:58:33.065	Timer_Event
+错误|2020-08-05 22:58:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:58:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:58:37.165	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:58:44.169	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:58:51.172	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:58:53.065	Timer_Event
+错误|2020-08-05 22:58:53.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:58:53.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:58:58.173	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:59:05.183	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:59:12.186	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:59:13.065	Timer_Event
+错误|2020-08-05 22:59:13.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:59:13.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:59:19.192	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:59:26.195	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:59:33.065	Timer_Event
+错误|2020-08-05 22:59:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:59:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:59:33.225	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:59:40.229	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:59:47.232	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 22:59:53.065	Timer_Event
+错误|2020-08-05 22:59:53.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 22:59:53.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 22:59:54.235	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:00:01.245	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:00:08.251	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:00:13.066	Timer_Event
+错误|2020-08-05 23:00:13.066	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 23:00:13.066	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 23:00:15.255	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:00:22.260	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:00:29.264	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:00:33.065	Timer_Event
+错误|2020-08-05 23:00:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 23:00:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 23:00:36.268	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:00:43.271	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:00:50.275	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:00:53.066	Timer_Event
+错误|2020-08-05 23:00:53.066	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 23:00:53.066	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 23:00:57.278	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:01:04.289	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:01:11.293	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:01:13.065	Timer_Event
+错误|2020-08-05 23:01:13.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 23:01:13.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 23:01:18.296	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:01:25.299	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:01:32.308	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:01:33.065	Timer_Event
+错误|2020-08-05 23:01:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 23:01:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 23:01:39.312	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:01:46.316	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:01:53.064	Timer_Event
+错误|2020-08-05 23:01:53.064	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 23:01:53.064	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 23:01:53.321	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:02:00.326	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:02:07.331	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:02:13.065	Timer_Event
+错误|2020-08-05 23:02:13.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 23:02:13.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 23:02:14.335	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:02:21.340	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:02:28.345	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:02:33.065	Timer_Event
+错误|2020-08-05 23:02:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 23:02:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 23:02:35.349	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:02:42.354	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:02:49.357	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:02:53.065	Timer_Event
+错误|2020-08-05 23:02:53.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 23:02:53.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 23:02:56.362	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:03:03.386	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:03:10.392	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:03:13.065	Timer_Event
+错误|2020-08-05 23:03:13.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 23:03:13.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 23:03:17.397	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:03:24.401	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:03:31.434	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:03:33.065	Timer_Event
+错误|2020-08-05 23:03:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 23:03:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 23:03:38.444	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:03:45.447	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:03:52.451	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:03:53.065	Timer_Event
+错误|2020-08-05 23:03:53.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 23:03:53.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 23:03:59.455	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:04:06.461	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:04:13.065	Timer_Event
+错误|2020-08-05 23:04:13.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 23:04:13.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 23:04:13.466	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:04:20.482	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:04:27.488	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:04:33.065	Timer_Event
+错误|2020-08-05 23:04:33.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 23:04:33.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 23:04:34.501	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:04:41.506	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:04:48.511	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.
+调试|2020-08-05 23:04:53.065	Timer_Event
+错误|2020-08-05 23:04:53.065	SendHeartToWS WriteOneMsg未建立连接 127.0.0.1:20005
+调试|2020-08-05 23:04:53.065	 this.eventQueue剩余需要处理的数据 = 0
+调试|2020-08-05 23:04:55.515	ServeiceClient dial to 127.0.0.1:20005 error: dial tcp 127.0.0.1:20005: connectex: No connection could be made because the target machine actively refused it.

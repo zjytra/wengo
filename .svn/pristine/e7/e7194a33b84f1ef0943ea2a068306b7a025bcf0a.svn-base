@@ -1,0 +1,101 @@
+/*
+创建时间: 2020/08/2020/8/26
+作者: Administrator
+功能介绍:
+数据库异步查询事件
+*/
+package dbsys
+
+import (
+	"github.com/wengo/dispatch"
+	"github.com/wengo/xlog"
+	"reflect"
+	"time"
+)
+
+//查询事件处理
+func (this *MySqlDBStore) OnDBQuereyEvent(eventdata *dispatch.EventData) {
+	if eventdata == nil {
+		return
+	}
+	//处理的方式
+	switch eventdata.DipatchType {
+	case DBQueryRowsCB_Event:
+		this.OnQueryRowsEvent(eventdata)
+	case DBQueryCustomOneRowQuery_Event:
+		this.OnCustomOneRowQuery(eventdata)
+	default:
+		xlog.ErrorLogNoInScene("OnDBQuereyEvent  查询类型%v未处理",eventdata.DipatchType)
+	}
+
+}
+
+// 异步查询
+//@param cbDispSys 查询回调调度器，这里为了方便选择哪个线程回调方法
+func (this *MySqlDBStore) AsyncRowsQuery(dbParam *dispatch.DBEventParam,dbcb dispatch.DBQueryRowsCallback, query string) {
+	if query == "" {
+		xlog.ErrorLogNoInScene("AsyncQuery  query == nil")
+	}
+	data := this.eventDatapool.GetDisPatchDataByPool(DBQueryRowsCB_Event, &DBQueryRowsCallbackEventData{
+		BDParam : dbParam,
+		Cb:         dbcb,
+		Querystr:   query,
+	})
+	this.quereyEvent.AddEvent(data)
+}
+
+//向逻辑线程返回原始的查询结果
+func (this *MySqlDBStore) OnQueryRowsEvent(eventdata *dispatch.EventData) {
+	queryEvent,ok:=eventdata.Val.(*DBQueryRowsCallbackEventData)
+	defer this.eventDatapool.Put(eventdata)
+	if !ok {
+		xlog.ErrorLogNoInScene("OnDBQuereyEvent Assert *DBQueryRowsCallbackEventData")
+		return
+	}
+	row,erro := this.Query(queryEvent.Querystr)
+	if erro != nil {
+		xlog.ErrorLogNoInScene("OnDBQuereyEvent erro = %v", erro)
+		return
+	}
+	if  queryEvent.BDParam.CbDispSys == nil || queryEvent.Cb == nil {
+		xlog.DebugLogNoInScene("OnDBQuereyEvent 调度事件=nil 或者回调 = nil 就不向逻辑队列投递事件了")
+		return
+	}
+	//进入调度队列
+	onEventErro := queryEvent.BDParam.CbDispSys.OnDBQuereyRows(&dispatch.DBQueryDataRowsCallback{
+		PlyMark: queryEvent.BDParam.PlyMark,
+		Cb:queryEvent.Cb,
+		Rows:row,
+	})
+	if onEventErro != nil {
+		xlog.ErrorLogNoInScene("投递查询事件 %v",onEventErro)
+	}
+}
+
+
+// 异步查询
+//@param oneRow 自定义查询 每个参数作为一个
+func (this *MySqlDBStore) AsyncCustomOneRowQuery(oneRow dispatch.CustomDBOperateOneRowCB) {
+	if oneRow == nil {
+		return
+	}
+	//由于逻辑线程使用了对象池，这里投递的时候就不用池子了避免提前被回收
+	data := dispatch.NewEventData(DBQueryCustomOneRowQuery_Event,oneRow)
+	this.quereyEvent.AddEvent(data)
+}
+
+//向逻辑线程返回原始的查询结果
+func (this *MySqlDBStore) OnCustomOneRowQuery(eventdata *dispatch.EventData) {
+	startT := time.Now()		//计算当前时间
+	queryEvent,ok:=eventdata.Val.(dispatch.CustomDBOperateOneRowCB)
+	if !ok {
+		xlog.ErrorLogNoInScene("OnDBQuereyEvent Assert *DBQueryRowsCallbackEventData")
+		return
+	}
+	queryEvent.ExcouteQueryFun()
+	since := time.Since(startT) / time.Millisecond
+	if since >= 200 {
+		reFlecttype := reflect.TypeOf(queryEvent)
+		xlog.WarningLogNoInScene("自定义接口%v,执行时间%v ms",	reFlecttype.Name(),since)
+	}
+}

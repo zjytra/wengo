@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f6f2691c-2306-428a-9d3b-969cd0a26cf1" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Go File" />
+      </list>
+    </option>
+  </component>
+  <component name="GOROOT" path="D:\work\go" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="ProjectId" id="1gJnNuBbysCnPKgADw3Wz3a6lo2" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultGoTemplateProperty" value="Go File" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="go.import.settings.migrated" value="true" />
+    <property name="go.sdk.automatically.set" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/protobuf/protos" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/protobuf/protos/datacenter.proto" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\work\gopath\src\github.com\wengo\protobuf\protos" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\work\gopath\src\github.com\wengo\model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Go Build.go build client">
+    <configuration name="go build center" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="wengo" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <parameters value="-AppID=15" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/center.go" />
+      <package value="github.com/wengo" />
+      <directory value="$PROJECT_DIR$/" />
+      <output_directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build client" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true">
+      <module name="wengo" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <parameters value="-AppID=1" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/client.go" />
+      <package value="github.com/wengo" />
+      <directory value="$PROJECT_DIR$/" />
+      <output_directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/wengo (1)" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="wengo" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/mysql-struct-maker.go" />
+      <package value="github.com/wengo" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build github.com/wengo" type="GoApplicationRunConfiguration" factoryName="Go Application" temporary="true" nameIsGenerated="true">
+      <module name="wengo" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/TestRegexp.go" />
+      <package value="github.com/wengo" />
+      <directory value="$PROJECT_DIR$/" />
+      <method v="2" />
+    </configuration>
+    <configuration name="go build lgsv.go" type="GoApplicationRunConfiguration" factoryName="Go Application">
+      <module name="wengo" />
+      <working_directory value="$PROJECT_DIR$/" />
+      <go_parameters value="-i" />
+      <parameters value="-AppID=12" />
+      <kind value="FILE" />
+      <filePath value="$PROJECT_DIR$/main.go" />
+      <package value="github.com/wengo" />
+      <directory value="$PROJECT_DIR$/" />
+      <output_directory value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Go Build.go build lgsv.go" />
+      <item itemvalue="Go Build.go build center" />
+      <item itemvalue="Go Build.go build client" />
+      <item itemvalue="Go Build.go build github.com/wengo" />
+      <item itemvalue="Go Build.go build github.com/wengo (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Go Build.go build client" />
+        <item itemvalue="Go Build.go build github.com/wengo (1)" />
+        <item itemvalue="Go Build.go build github.com/wengo" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="778" y="323" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598004918740">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="778" y="323" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598004918740" />
+    <state x="656" y="144" key="#go_build_client" timestamp="1597842539358">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="144" key="#go_build_client/0.0.1920.1040@0.0.1920.1040" timestamp="1597842539358" />
+    <state x="656" y="144" key="#go_build_github.com/wengo" timestamp="1598003432376">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="144" key="#go_build_github.com/wengo/0.0.1920.1040@0.0.1920.1040" timestamp="1598003432376" />
+    <state x="656" y="144" key="#go_build_github.com/wengo_(1)" timestamp="1598177424261">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="144" key="#go_build_github.com/wengo_(1)/0.0.1920.1040@0.0.1920.1040" timestamp="1598177424261" />
+    <state width="893" height="466" key="DebuggerActiveHint" timestamp="1598275789700">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="893" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1598275789700" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1598187817977">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598187817977" />
+    <state x="817" y="266" key="EnvironmentVariablesDialog" timestamp="1597842513412">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="817" y="266" key="EnvironmentVariablesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1597842513412" />
+    <state x="739" y="275" key="FileChooserDialogImpl" timestamp="1598187807143">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1598187807143" />
+    <state width="1877" height="259" key="GridCell.Tab.-1.bottom" timestamp="1597843971056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.-1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1597843971056" />
+    <state width="1877" height="259" key="GridCell.Tab.-1.center" timestamp="1597843971056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.-1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1597843971056" />
+    <state width="1877" height="259" key="GridCell.Tab.-1.left" timestamp="1597843971056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.-1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1597843971056" />
+    <state width="1877" height="259" key="GridCell.Tab.-1.right" timestamp="1597843971056">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.-1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1597843971056" />
+    <state width="1877" height="259" key="GridCell.Tab.0.bottom" timestamp="1598275816119">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598275816119" />
+    <state width="1877" height="259" key="GridCell.Tab.0.center" timestamp="1598275816119">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598275816119" />
+    <state width="1877" height="259" key="GridCell.Tab.0.left" timestamp="1598275816119">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598275816119" />
+    <state width="1877" height="259" key="GridCell.Tab.0.right" timestamp="1598275816119">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598275816119" />
+    <state width="1877" height="259" key="GridCell.Tab.1.bottom" timestamp="1598275816119">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1598275816119" />
+    <state width="1877" height="259" key="GridCell.Tab.1.center" timestamp="1598275816119">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1598275816119" />
+    <state width="1877" height="259" key="GridCell.Tab.1.left" timestamp="1598275816119">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1598275816119" />
+    <state width="1877" height="259" key="GridCell.Tab.1.right" timestamp="1598275816119">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="259" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1598275816119" />
+    <state x="258" y="166" width="1145" height="711" key="SettingsEditor" timestamp="1598184919461">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="258" y="166" width="1145" height="711" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1598184919461" />
+    <state x="734" y="237" key="com.goide.refactor.move.GoMoveDeclarationDialog" timestamp="1598002937967">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="734" y="237" key="com.goide.refactor.move.GoMoveDeclarationDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598002937967" />
+    <state x="662" y="121" width="1024" height="798" key="find.popup" timestamp="1598275616108">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="662" y="121" width="1024" height="798" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598275616108" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1598185493298">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1598185493298" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/app/apploginsv/accountregister.go</url>
+          <line>48</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/app/datacenter/servermsg.go</url>
+          <line>9</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/app/apploginsv/accountregister.go</url>
+          <line>42</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/model/incrementid.go</url>
+          <line>22</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/app/apploginsv/accountregister.go</url>
+          <line>109</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DlvLineBreakpoint">
+          <url>file://$PROJECT_DIR$/app/apploginsv/accountregister.go</url>
+          <line>66</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

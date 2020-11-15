@@ -1,0 +1,48 @@
+/*
+创建时间: 2020/4/27
+作者: zjy
+功能介绍:
+
+*/
+
+package dispatch
+
+import (
+	"database/sql"
+)
+
+type DBQueryRowsCallback func(*sql.Rows) error
+//数据库线程直接返回多维数组
+type DBQueryRowsToStringSlicesCb  func([][]string) error
+//数据库线程返回单行数据
+type DBQueryRowToStringSliceCb  func([]string) error
+//数据库线程直接查询返回结构体不过结构体的要与数据库表字段匹配
+type DBQueryRowToStructCb  func(to interface{}) error
+//数据库线程返回多行结构体
+type DBQueryRowsToStructSliceCb  func([]interface{}) error
+
+type DBExcuteCallback  func(result sql.Result) error
+
+//数据库查询事件对象
+type DBQueryRowsCallbackEventData struct {
+	CbDispSys *DispatchSys        //回调系统确定 回调方法的调度协程
+	Cb        DBQueryRowsCallback //回调方法
+	Querystr  string              //封装好的回调语句
+}
+//向逻辑线程投递查询事件
+type DBQueryData struct {
+	Cb   DBQueryRowsCallback //回调方法
+	Rows *sql.Rows
+}
+
+type DBExcuteEventData struct {
+	CbDispSys *DispatchSys //回调系统确定 回调方法的调度协程
+	Cb        DBExcuteCallback
+	Excutestr string //封装好的回调语句
+}
+
+//向逻辑线程投递查询事件
+type DBExcuteData struct {
+	Cb  DBExcuteCallback //回调方法
+	Result sql.Result
+}

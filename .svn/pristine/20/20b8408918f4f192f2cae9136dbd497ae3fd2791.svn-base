@@ -1,0 +1,57 @@
+/*
+创建时间: 2020/08/2020/8/26
+作者: Administrator
+功能介绍:
+
+*/
+package dbsys
+
+import (
+	"github.com/wengo/dispatch"
+	"github.com/wengo/xlog"
+	"time"
+)
+
+// 异步写
+//dbcb 回调方法
+func (this *MySqlDBStore) AsynExtute(dbParam  *dispatch.DBEventParam,dbcb dispatch.DBExcuteCallback, query string) {
+	data := this.eventDatapool.GetDisPatchDataByPool(DBExcuteEvent, &DBExcuteEventData{
+		BDParam : dbParam,
+		Cb:         dbcb,
+		Excutestr:  query,
+	})
+	this.writeEvent.AddEvent(data)
+}
+
+//写事件处理
+func (this *MySqlDBStore) OnDBWriteEvent(eventdata *dispatch.EventData) {
+	queryEvent,ok:= eventdata.Val.(*DBExcuteEventData)
+	defer this.eventDatapool.Put(eventdata)
+	if !ok {
+		xlog.ErrorLogNoInScene("OnDBWriteEvent Assert *DBQueryRowsCallbackEventData")
+		return
+	}
+	startT := time.Now()		//计算当前时间
+	result,erro := this.Excute(queryEvent.Excutestr)
+	since := time.Since(startT) / time.Millisecond
+	if since >= 200 {
+		xlog.WarningLogNoInScene("sql ：%v,执行时间%v ms",queryEvent.Excutestr,since)
+	}
+	if erro != nil {
+		xlog.ErrorLogNoInScene("OnDBWriteEvent erro = %v", erro)
+		return
+	}
+	if  queryEvent.BDParam.CbDispSys == nil || queryEvent.Cb == nil {
+		xlog.DebugLogNoInScene("OnDBWriteEvent 调度事件=nil 或者回调 = nil 就不向逻辑队列投递事件了")
+		return
+	}
+	//进入调度队列
+	onEventErro := queryEvent.BDParam.CbDispSys .OnDBWrite(&dispatch.DBExcuteData{
+		PlyMark: queryEvent.BDParam.PlyMark,
+		Cb:queryEvent.Cb,
+		Result:result,
+	})
+	if onEventErro != nil {
+		xlog.ErrorLogNoInScene("投递查询事件 %v",onEventErro)
+	}
+}

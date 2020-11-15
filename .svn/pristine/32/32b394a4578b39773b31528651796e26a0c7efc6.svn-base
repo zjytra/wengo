@@ -1,0 +1,121 @@
+/*
+创建时间: 2020/5/24
+作者: zjy
+功能介绍:
+服务器处理,这里主要是区别客户端与服务器消息,以便于分别处理
+*/
+
+package apploginsv
+
+import (
+	"github.com/panjf2000/ants"
+	"github.com/wengo/app/netmsgsys"
+	"github.com/wengo/appdata"
+	"github.com/wengo/cmdconst"
+	"github.com/wengo/cmdconst/datacenter"
+	"github.com/wengo/csvdata"
+	"github.com/wengo/dispatch"
+	"github.com/wengo/network"
+	"github.com/wengo/protobuf/pb/world_proto"
+	"github.com/wengo/timersys"
+	"github.com/wengo/xlog"
+	"time"
+)
+
+type WorldServerMsgHandler struct {
+	svDispSys *dispatch.DispatchSys   // 服务器调度对象 共用一个将服务器业务逻辑搞成单线程
+	netmsgsys     *netmsgsys.NetMsgSys
+	apool *ants.Pool
+	worldCof *csvdata.Networkconf
+	WorldsvConn  *network.ServeiceClient     //世界服连接
+	sndHeartTimer uint32   //给世界服发送心跳
+}
+
+func  NewWorldServerHandle(conf *csvdata.Networkconf, apool *ants.Pool,dispSys *dispatch.DispatchSys)*WorldServerMsgHandler {
+	if  conf == nil {
+		panic("NewWorldServerHandle  conf is nil")
+		return nil
+	}
+	if  apool == nil {
+		panic("NewWorldServerHandle  apool is nil")
+		return nil
+	}
+	if  dispSys == nil {
+		panic("NewWorldServerHandle  dispSys is nil")
+		return nil
+	}
+	this := new(WorldServerMsgHandler)
+	this.apool = apool
+	this.worldCof = conf
+	this.svDispSys = dispSys
+	if !this.OnInit() {
+		xlog.ErrorLogNoInScene("WorldServerMsgHandler 初始化 失败")
+		return  nil
+	}
+	return this
+}
+
+func (this *WorldServerMsgHandler)OnInit() bool{
+	// this.dispSys = dispatch.NewDispatchSys(this.apool)
+	this.svDispSys.SetServiceNet(this)
+	//与世界服对接，获取网关信息
+	this.WorldsvConn = network.NewServeiceClient(this.svDispSys,this.worldCof,this.apool)
+	if this.WorldsvConn == nil {
+		return  false
+	}
+	this.WorldsvConn.Start()
+	this.netmsgsys = netmsgsys.NewMsgHandler()
+	this.RegisterServerMsg()
+	this.SetTimer()
+	return true
+}
+
+func (this *WorldServerMsgHandler)OnServiceLink(conn network.Conner) error{
+	return  nil
+}
+
+//世界服关闭连接
+func (this *WorldServerMsgHandler)OnServiceClose(conn network.Conner) error{
+	return  nil
+}
+
+//读取世界服发来的消息
+func (this *WorldServerMsgHandler)OnServiceMsg(msgdata *network.MsgData) error{
+	return	this.netmsgsys.OnNetWorkMsgHandle(msgdata)
+}
+
+// 关闭
+func (this *WorldServerMsgHandler)OnRelease(){
+	this.netmsgsys.Release()
+	this.WorldsvConn.Close()
+	timersys.StopTimer(this.sndHeartTimer)
+}
+
+
+// 发送心跳给世界服
+func (this *WorldServerMsgHandler) SendHeartToWS() {
+	defer xlog.RecoverToLog(func() {
+		timersys.StopTimer(this.sndHeartTimer)
+		this.sndHeartTimer = timersys.NewWheelTimer(time.Second  * 20,this.SendHeartToWS,this.svDispSys)
+	})
+	//给中心服发送心跳
+	sverSysInfo := &world_proto.ServerSysInfo{}
+	sverSysInfo.FromAppId = appdata.AppID
+	sverSysInfo.UserConnnum = GetClientConnSize()
+	erro := this.WorldsvConn.WritePBMsg(cmdconst.Main_DataCenter, datacenter.Sub_Req_Server_HeartBeat,sverSysInfo)
+	if erro != nil {
+		xlog.ErrorLogNoInScene("SendHeartToWS %v",erro)
+	}
+}
+
+// 设置定时器
+func (this *WorldServerMsgHandler)SetTimer() {
+	this.sndHeartTimer = timersys.NewWheelTimer(time.Second * 20,this.SendHeartToWS,this.svDispSys)
+}
+
+// 注册服务器 的消息
+func (this *WorldServerMsgHandler)RegisterServerMsg(){
+	this.netmsgsys.RegisterMsgHandle(cmdconst.Main_DataCenter, datacenter.Sub_Repsn_Connet_WorldSucceed, ConnectWorldServerRepsn)
+	this.netmsgsys.RegisterMsgHandle(cmdconst.Main_DataCenter, datacenter.Sub_Repsn_RegisterServer, RegisterServerRepsn)
+	this.netmsgsys.RegisterMsgHandle(cmdconst.Main_DataCenter, datacenter.Sub_Repsn_Server_HeartBeat, WorldHeartBeatRepsn)
+}

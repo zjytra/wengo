@@ -1,0 +1,55 @@
+syntax = "proto3";
+option go_package = "./account_proto";
+package account_proto;
+
+
+
+
+//注册用户登录到中心服
+message LS_DC_ReqRegisterAccoutMsg {
+  string username = 1; //用户
+  string password = 2; //密码
+  uint32 client_type = 3;//客户端类型
+  uint32 phone_num = 4; //电话号码
+  uint32 client_connID = 6;//这里方便回到登录服务器查找连接
+  string client_ip = 7;//客户端ip地址
+  string mac_addr = 8; //mac地址
+  uint32 version = 9; //版本号
+}
+
+
+//中心服返回登录服注册消息
+message DC_LS_RespnRegisterAccoutMsg {
+  uint32 client_connID = 1;//这里方便回到登录服务器查找连接
+  int32 rest_code = 2;//结果码
+  string username = 3; //用户
+  string password = 4; //用户密码
+  uint32 client_type = 5; //客户端类型
+}
+
+//用户登录到中心服验证
+message LS_DC_ReqLoginMsg {
+  string username = 1; //用户
+  string password = 2; //密码
+  uint32 client_type = 3;//客户端类型
+  uint32 client_connID = 4;//这里方便回到登录服务器查找连接
+  string client_ip = 5;//客户端ip地址
+  string mac_addr = 6; //mac地址
+  uint32 version = 7; //版本号
+}
+
+//中心服返回登录服登录消息
+message DC_LS_RespnLoginAccoutMsg {
+  uint32 client_connID = 1;//这里方便回到登录服务器查找连接
+  int32 rest_code = 2;//结果码
+  string username = 3; //用户
+  uint64 accountID = 4;//账号id
+  uint32 client_type = 5;//客户端类型
+}
+
+//登录发送中心服离线
+message LS_DC_ClientOffLineMsg {
+    uint64 accountID = 2;//账号id
+    string username = 3; //用户
+}
+

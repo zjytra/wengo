@@ -1,0 +1,27 @@
+/*
+创建时间: 2020/2/29
+作者: zjy
+功能介绍:
+
+*/
+
+package dispatch
+
+import (
+	"errors"
+)
+
+
+// 定时器事件
+func (this *DispatchSys) OnEventTimer(val interface{}) error {
+	Cb,ok:= val.(func())
+	if !ok {
+		return errors.New("OnEventTimer cb erro")
+	}
+	if Cb == nil {
+		return errors.New("OnEventTimer Cb is nil")
+	}
+	Cb() //回调
+	return nil
+}
+

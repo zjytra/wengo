@@ -1,0 +1,56 @@
+/*
+创建时间: 2020/09/2020/9/1
+作者: Administrator
+功能介绍:
+
+*/
+package model
+
+import "github.com/wengo/model/dbmodels"
+
+const (
+	AccountState_None  = 0
+	AccountState_Offline = 1
+	AccountState_Online = 2
+)
+
+
+type Account struct {
+	dbAccountData *dbmodels.Accounts
+	exprationTime int64
+	accountState  int64  //账号状态
+}
+
+
+//账号是否离线
+func (a *Account) AccountIsOffline() bool {
+	return a.accountState == AccountState_Offline
+}
+
+//账号是否离线
+func (a *Account) AccountIsOnline() bool {
+	return a.accountState == AccountState_Online
+}
+
+func (a *Account) AccountState() int64 {
+	return a.accountState
+}
+
+func (a *Account) SetAccountState(accountState int64) {
+	a.accountState = accountState
+}
+
+
+func NewAccount(dbAccountData *dbmodels.Accounts) *Account {
+	return &Account{dbAccountData: dbAccountData}
+}
+
+func (a *Account) ExprationTime() int64 {
+	return a.exprationTime
+}
+
+func (a *Account) SetExprationTime(exprationTime int64) {
+	a.exprationTime = exprationTime
+}
+
+

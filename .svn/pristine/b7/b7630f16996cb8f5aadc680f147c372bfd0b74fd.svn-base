@@ -1,0 +1,16 @@
+/*
+创建时间: 2020/3/29
+作者: zjy
+功能介绍:
+
+*/
+
+package cmdconst
+
+const(
+	Main_LoginSv    = 1 //登陆服消息
+	Main_DataCenter = 2 //数据中心消息
+	Main_Account    = 3 // 账号系统消息
+)
+
+

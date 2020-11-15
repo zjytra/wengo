@@ -1,0 +1,17 @@
+syntax = "proto3";
+option go_package = "./datacenter_proto";
+package datacenter_proto;
+
+//服务器信息
+message ServerInfoMsg {
+    int32 app_id = 1; //#服务器id 字段名称  app_id
+    int32 app_kind = 2; //服务器类型 字段名称  app_kind
+    string out_addr = 4; //外部连接的地址 字段名称  out_addr
+    string out_prot =5; //外部连接端口 字段名称  out_prot
+}
+
+//服务器系统信息 发送心跳的时候上报
+message ServerSysInfo{
+    int32  from_app_id = 1; // 来至哪个服务器
+    int32  user_connnum = 2; //用户连接信息
+}

@@ -1,0 +1,33 @@
+syntax = "proto3";
+option go_package = "./account_proto";
+package account_proto;
+
+
+//注册用户客户端到中心服
+message CL_LS_ReqRegisterAccoutMsg {
+  string username = 1; //用户
+  string password = 2; //密码
+  uint32 client_type = 3;//客户端类型
+  uint32 phone_num = 4; //电话号码
+  string mac_addr = 5; //mac地址
+}
+
+//返回创建消息
+message RespnRegisterAccoutMsg {
+  uint32 client_connID = 1;//这里方便回到登录服务器查找连接
+  uint32 res_code = 2;//结果码
+}
+
+//登陆
+message CL_LS_ReqLoginMsg {
+  string username = 1; //用户
+  string password = 2; //密码
+  uint32 client_type = 3;//客户端类型
+  string mac_addr = 5; //mac地址
+}
+
+message ReqCreatePlayerMsg {
+  string playername = 1; //玩家名称
+  int32  sex = 2; //性别
+  int32  job = 3; //游戏职业
+}

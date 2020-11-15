@@ -1,0 +1,111 @@
+/*
+创建时间: 2019/11/24
+作者: zjy
+功能介绍:
+登录服
+*/
+
+package datacenter
+
+import (
+	"errors"
+	"github.com/wengo/app/netmsgsys"
+	"github.com/wengo/appdata"
+	"github.com/wengo/cmdconst"
+	"github.com/wengo/cmdconst/cmdaccount"
+	"github.com/wengo/cmdconst/cmddatacenter"
+	"github.com/wengo/dbsys"
+	"github.com/wengo/dispatch"
+	"github.com/wengo/model"
+	"github.com/wengo/network"
+	"github.com/wengo/protobuf/pb/common_proto"
+	"github.com/wengo/xlog"
+	"sync"
+)
+
+
+
+type DataCenter struct {
+	tcpserver *network.TCPServer
+	conns     sync.Map
+	dispSys   *dispatch.DispatchSys
+	netmsgsys *netmsgsys.NetMsgSys
+}
+
+
+// 程序启动
+func (this *DataCenter)OnStart() {
+	this.OnInit()
+}
+
+//初始化
+func (this *DataCenter)OnInit() bool{
+	PdataCenter = this
+	// 加载csv配置
+	// csvdata.LoadCommonCsvData()
+	if appdata.WorkPool == nil {
+		panic(" InitData appdata.WorkPool is nil")
+	}
+	dbsys.InitGameDB(appdata.WorkPool)
+	dbsys.InitLogDB(appdata.WorkPool)
+	dbsys.InitStatisticsDB(appdata.WorkPool)
+	this.dispSys = dispatch.NewDispatchSys(appdata.WorkPool)
+	this.dispSys.SetNetObserver(this)
+	// 处理其他服务器的连接
+	this.tcpserver = network.NewTcpServer(this.dispSys, appdata.NetConf,appdata.WorkPool)
+	this.netmsgsys = netmsgsys.NewMsgHandler()
+	this.tcpserver.Start()
+	this.RegisterMsg()
+	NewData()
+	return true
+}
+
+// 程序运行
+func (this *DataCenter)OnUpdate() bool{
+	
+	return true
+}
+// 关闭
+func (this *DataCenter)OnRelease(){
+	this.tcpserver.Close()
+	this.dispSys.Release()
+	network.Release()
+	ClearAllServerData()
+}
+
+func (this *DataCenter)OnNetWorkConnect(conn network.Conner) error{
+	//给其他服务器发送链接服务器成功的消息
+	restcode := &common_proto.RestInt32CodeMsg{
+		ResCode:model.Link_Server_Succeed,
+	}
+	//通知其他服务器器连接成功
+	erro := conn.WritePBMsg(cmdconst.Main_DataCenter, cmddatacenter.Sub_Repsn_Connet_WorldSucceed, restcode)
+	return  erro
+}
+
+
+func (this *DataCenter)OnNetWorkClose(conn network.Conner) error{
+	//这里要移除掉线的服务器
+	if RemoveServerInfo(conn.GetConnID()){
+		return nil
+	}
+	return  errors.New("未找到相关服务器")
+}
+
+func (this *DataCenter)OnNetWorkRead(msgdata *network.MsgData) error{
+	xlog.ErrorLog(appdata.GetSecenName(), "DataCenter OnNetWorkRead",)
+	return  this.netmsgsys.OnNetWorkMsgHandle(msgdata)
+}
+
+
+//注册消息
+func (this *DataCenter)RegisterMsg(){
+	this.netmsgsys.RegisterMsgHandle(cmdconst.Main_DataCenter, cmddatacenter.Sub_Req_RegisterServer, ReqRegisterServer)
+	this.netmsgsys.RegisterMsgHandle(cmdconst.Main_DataCenter, cmddatacenter.Sub_Req_Server_HeartBeat, ServerHeartBeat)
+	this.netmsgsys.RegisterMsgHandle(cmdconst.Main_DataCenter, cmddatacenter.Sub_Req_Server_HeartBeat, ServerHeartBeat)
+	this.netmsgsys.RegisterMsgHandle(cmdconst.Main_Account, cmdaccount.Sub_LS_DC_RegisterAccount, LSDCRegisterAccountMsgHandler)
+
+}
+
+
+

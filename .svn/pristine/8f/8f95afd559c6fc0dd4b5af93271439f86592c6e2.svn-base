@@ -1,0 +1,16 @@
+{
+  "LogConf": {
+    "ShowLvl": 7 ,
+    "LogQueueCap": 200,
+    "IsOutStd": true,
+    "FileTimeSpan": 24,
+
+
+    "Commentss" :"下面注释字段不读取主要是描述上面字段",
+    "Comments1" :"ShowLvl日志等级 1(调试)|2(警告)|4(错误)|7(全开)",
+    "Comments2" :"LogQueueCap日志缓冲通道大小,当缓冲满时可能会阻塞投递日志日志线程",
+    "Comments3" :"IsOutStd是否在程序标准输出打印日志",
+    "Comments4" :"FileTimeSpan日志文件创建间隔时间1,2,3,4,5,6,9,12,24"
+  },
+  "WorldServerId" : 15
+}

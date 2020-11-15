@@ -1,0 +1,15 @@
+syntax = "proto3";
+option go_package = "./common_proto";
+package common_proto;
+
+//空消息共用
+message NullMsg{
+}
+//结果码
+message RestInt32CodeMsg {
+  int32 rest_code = 1;
+}
+
+
+
+

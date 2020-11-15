@@ -1,0 +1,123 @@
+/*
+创建时间: 2020/2/17
+作者: zjy
+功能介绍:
+
+*/
+
+package apploginsv
+
+import (
+	"github.com/golang/protobuf/proto"
+	"github.com/wengo/cmdconst"
+	"github.com/wengo/cmdconst/cmdaccount"
+	"github.com/wengo/msgcode"
+	"github.com/wengo/network"
+	"github.com/wengo/protobuf/pb/account_proto"
+	"github.com/wengo/protobuf/pb/dcaccount_proto"
+	"github.com/wengo/xlog"
+	"github.com/wengo/xutil"
+	"strings"
+)
+
+
+
+//客户端请求注册账号
+func RegisterAccountMsgHandler(conn network.Conner, msgdata []byte) error {
+	regAccout := &account_proto.CL_LS_ReqRegisterAccoutMsg{}
+	erro := proto.Unmarshal(msgdata, regAccout)
+	if erro != nil {
+		xlog.ErrorLogNoInScene("RegisterAccountMsgHandler %v", erro)
+		return erro
+	}
+	//长度验证
+	if !VerifyStrLen(conn, regAccout) {
+		return nil
+	}
+	//账号包含空格或者非单词字符
+	isMatch := xutil.StringHasSpaceOrSpecialChar(regAccout.Username)
+	if isMatch {
+		SendRegisterAccountToClient(conn, msgcode.RegisterAccoutCode_UserNameFormatErro)
+		return nil
+	}
+	//sql注入验证
+	isMatch = xutil.StringHasSqlKey(regAccout.Username)
+	if isMatch {
+		SendRegisterAccountToClient(conn, msgcode.RegisterAccountCode_SqlZhuRu)
+		return nil
+	}
+	//sql注入验证
+	isMatch = xutil.StringHasSqlKey(regAccout.Password)
+	if isMatch {
+		SendRegisterAccountToClient(conn, msgcode.RegisterAccountCode_SqlZhuRu)
+		return nil
+	}
+	addr := strings.Split(conn.RemoteAddr().String(),":")
+	regAccoutToDc := &dcaccount_proto.LS_DC_ReqRegisterAccoutMsg{
+		Username: regAccout.Username,
+		Password: regAccout.Password,
+		ClientType:regAccout.ClientType,
+		PhoneNum: regAccout.PhoneNum,
+		ClientConnID: conn.GetConnID(),
+		ClientIp: addr[0],
+	}
+	//验证数据
+	//验证账号是否合法
+	//发送到dbServer 去验证 拉取用户账号信息
+	erro = DataCenter.DataCenterConn.WritePBMsg(cmdconst.Main_Account, cmdaccount.Sub_LS_DC_RegisterAccount, regAccoutToDc)
+	// 查询内存中是否有这个注册用户
+	xlog.ErrorLogNoInScene("RegisterAccountMsgHandler  regAccout.Username  =%v", regAccout.Username)
+	return nil
+}
+
+func VerifyStrLen(conn network.Conner, regAccout *account_proto.CL_LS_ReqRegisterAccoutMsg) bool {
+	strLen := len(regAccout.Username)
+	if strLen <= 4 {
+		SendRegisterAccountToClient(conn, msgcode.RegisterAccoutCode_UserNameShort)
+		return false
+	}
+	if strLen > 11 {
+		SendRegisterAccountToClient(conn, msgcode.RegisterAccoutCode_UserNameLong)
+		return false
+	}
+	strLen = len(regAccout.Password)
+	if strLen < 6 { //密码过短
+		SendRegisterAccountToClient(conn, msgcode.RegisterAccoutCode_PasswordShort)
+		return false
+	}
+	if strLen > 18 {
+		SendRegisterAccountToClient(conn, msgcode.RegisterAccoutCode_PasswordLong)
+		return false
+	}
+	return true
+}
+
+
+//给客户端回复消息
+func SendRegisterAccountToClient(conn network.Conner, code uint32) {
+	restcode := &account_proto.RespnRegisterAccoutMsg{
+		ResCode: code,
+	}
+	//返回测试数据
+	erro := conn.WritePBMsg(cmdconst.Main_Account, cmdaccount.Sub_LS_C_RegisterAccount, restcode)
+	if erro != nil {
+		xlog.ErrorLogNoInScene("SendRegisterAccountToClient %v", erro)
+	}
+}
+
+//世界服返回账号注册消息
+func DCLCRespnRegisterAccount(conn network.Conner, msgdata []byte) error {
+	respn := &account_proto.RespnRegisterAccoutMsg{}
+	erro := proto.UnmarshalMerge(msgdata,respn)
+	if erro != nil {
+		return erro
+	}
+	if respn.ClientConnID == 0 {
+		return erro
+	}
+	//向客户端返回消息
+	erro = Client.tcpServer.WriteOneMsgByConnID(respn.ClientConnID,cmdconst.Main_Account,cmdaccount.Sub_LS_C_RegisterAccount,msgdata)
+	
+	return  erro
+}
+
