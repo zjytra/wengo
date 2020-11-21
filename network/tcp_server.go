@@ -5,37 +5,23 @@ import (
 	"fmt"
 	"github.com/golang/protobuf/proto"
 	"github.com/panjf2000/ants/v2"
-	"wengo/appdata"
+	"net"
+	"sync"
+	"time"
+	"wengo/app/appdata"
 	"wengo/csvdata"
 	"wengo/model"
 	"wengo/timersys"
 	"wengo/xlog"
-	"net"
-	"sync"
-	"time"
 )
 
-var (
-	connIDs *model.IncrementId // 自增id生成器,用id，有利于连接在其他地方使用，降低包的依赖
-)
 
-func init() {
-	connIDs = model.NewIncrementId()
-	fmt.Println("connID已经初始化")
-}
-
-func Release() {
-	if connIDs != nil {
-		connIDs.Release() // 清空列表
-	}
-}
 
 type TCPServer struct {
-	ln           net.Listener                // 服务器监听对象
-	connetsize   *model.AtomicInt32FlagModel // 已经连接的数量
-	connSyncmaps sync.Map                    // id 加 连接对象
-	//connm        map[uint32]*TcpConn      就用sync.map保证效率高点
-	//mutexConns   sync.Mutex
+	ln          net.Listener                // 服务器监听对象
+	connetsize  *model.AtomicInt32FlagModel // 已经连接的数量
+	connMaps    map[uint32]*TcpConn         // 客户端连接对象map
+	mutexConns  sync.RWMutex
 	wgLn        sync.WaitGroup
 	wgConns     sync.WaitGroup
 	netObserver NetWorkObserver // 网络事件观察者
@@ -58,12 +44,12 @@ func NewTcpServer(netobs NetWorkObserver, conf *csvdata.Networkconf, pool *ants.
 	tcpsv := new(TCPServer)
 	tcpsv.netObserver = netobs
 	tcpsv.netConf = conf
-	// 协程池,这里要为每个连接开读写线程
+	// 协程池,这里要为每个连接开读写协程
 	tcpsv.workPool = pool
 	tcpsv.connetsize = model.NewAtomicInt32Flag()
 	tcpsv.isClose = model.NewAtomicBool()
 	tcpsv.isClose.SetFalse()
-	
+
 	tcpsv.writeChan = make(chan *GroupMessage, conf.Write_cap_num)
 	tcpsv.stopEvent = make(chan bool, 1)
 	tcpsv.msgParser = NewMsgParser(conf.Msglen_size, conf.Max_msglen, conf.Msg_isencrypt)
@@ -82,6 +68,7 @@ func (server *TCPServer) Start() {
 	}
 	go server.serverEvent()
 }
+
 
 
 //服务器内部通信不需要检测
@@ -110,6 +97,7 @@ func (server *TCPServer) init() {
 	// }
 	
 	server.ln = ln
+	server.connMaps = make(map[uint32]*TcpConn)
 }
 
 func (server *TCPServer) run() {
@@ -147,7 +135,9 @@ func (server *TCPServer) run() {
 // 添加链接信息
 func (server *TCPServer) addConn(conn net.Conn) bool {
 	
+	server.mutexConns.Lock()//互斥锁
 	if server.GetConnectSize() >= int32(server.netConf.Max_connect) {
+		server.mutexConns.Unlock()
 		erro := conn.Close()
 		if erro != nil {
 			xlog.WarningLogNoInScene("超过连接关闭链接错误 %v ", erro)
@@ -156,23 +146,27 @@ func (server *TCPServer) addConn(conn net.Conn) bool {
 		return false
 	}
 	// 创建封装的连接
-	ConnID := connIDs.GetId()
+	ConnID := nextID()
 	tcpConn := newTcpConn(conn, ConnID, server.netObserver, server.netConf, server.workPool, server.msgParser)
-	server.connSyncmaps.Store(ConnID, tcpConn) // 存储连接
+	server.connMaps[ConnID] = tcpConn // 存储连接
+	server.mutexConns.Unlock() //解锁
+	
 	server.connetsize.AddInt32()
 	server.wgConns.Add(1)
 	// 连接接收消息由于连接是动态最好用
 	server.workPool.Submit(func() {
 		server.ReceiveData(tcpConn)
 	})
-	xlog.DebugLogNoInScene("当前连接数addConn %d,连接标识%d", server.GetConnectSize(),ConnID)
+
+	
+	xlog.DebugLogNoInScene("当前连接数addConn %d,连接标识%d", server.GetConnectSize(), ConnID)
 	return true
 }
 
 // 连接中读取数据
 func (server *TCPServer) ReceiveData(tcpConn *TcpConn) {
 	defer server.wgConns.Done() // 关闭连接waitgorup减一
-
+	
 	defer xlog.RecoverToLog(func() {
 		// 出錯要关闭远端连接
 		server.closeConn(tcpConn)
@@ -201,12 +195,15 @@ func (server *TCPServer) closeConn(tcpConn *TcpConn) {
 	if tcpConn == nil {
 		return
 	}
-
+	
 	tcpConn.Close() // 关闭写协程
 	id := tcpConn.GetConnID()
-	server.connSyncmaps.Delete(id)
+	server.mutexConns.Lock()//互斥锁
+	delete(server.connMaps,id)
+	server.mutexConns.Unlock()//互斥锁
+	
 	server.connetsize.SubInt32()
-	xlog.DebugLogNoInScene("被动断开连接 当前连接数closeConn %d,移除连接标识%d", server.GetConnectSize(),id)
+	xlog.DebugLogNoInScene("被动断开连接 当前连接数closeConn %d,移除连接标识%d", server.GetConnectSize(), id)
 }
 
 // 获取连接数
@@ -218,16 +215,13 @@ func (server *TCPServer) GetConnectSize() int32 {
 func (server *TCPServer) checkLink() {
 	//xlog.WarningLogNoInScene("TCPServercheckLink")
 	// 关闭所有连接
-	server.connSyncmaps.Range(func(key, value interface{}) bool {
-		conn, ok := value.(*TcpConn)
-		if ok {
-			if !conn.IsAlive() {
-				xlog.ErrorLogNoInScene("connid %v 已经超过 %v 秒没发包", conn.GetConnID(), server.netConf.Checklink_s)
-				conn.Close()
-			}
+	for _,conn := range server.connMaps{
+		if !conn.IsAlive() {
+			xlog.ErrorLogNoInScene("connid %v 已经超过 %v 秒没发包", conn.GetConnID(), server.netConf.Checklink_s)
+			conn.Close()
 		}
-		return true
-	})
+	}
+
 }
 
 // 获取连接数
@@ -261,14 +255,12 @@ func (server *TCPServer) Close() {
 		xlog.WarningLogNoInScene("TCPServer关闭监听错误 %v", erro)
 	}
 	server.wgLn.Wait()
+	
 	// 关闭所有连接
-	server.connSyncmaps.Range(func(key, value interface{}) bool {
-		conn, ok := value.(*TcpConn)
-		if ok {
-			conn.Close()
-		}
-		return true
-	})
+	for _,conn :=range server.connMaps{
+		conn.Close()
+	}
+	server.connMaps = nil
 	server.wgConns.Wait()
 	fmt.Println("TCPServer doClose")
 }
@@ -400,13 +392,11 @@ func (server *TCPServer) doSend(message *GroupMessage) {
 	}
 	
 	// 发送给全部连接
-	server.connSyncmaps.Range(func(key, value interface{}) bool {
-		conn, ok := value.(*TcpConn)
-		if ok {
-			conn.Write(message.Msgdata)
-		}
-		return true
-	})
+	server.mutexConns.Lock()
+	for _,conn :=range server.connMaps{
+		conn.Write(message.Msgdata)
+	}
+	server.mutexConns.Unlock()
 }
 
 // 写单个消息
@@ -422,15 +412,8 @@ func (server *TCPServer) sendOneMsg(ConnID uint32, msg []byte) error {
 
 //获取tcp连接
 func (server *TCPServer) GetTcpConnet(ConnID uint32) *TcpConn {
-	conn, ok := server.connSyncmaps.Load(ConnID)
-	if !ok {
-		xlog.ErrorLogNoInScene("TCPServer GetTcpConnet 连接标识%v已经关闭", ConnID)
-		return nil
-	}
-	tcpconn, ok := conn.(*TcpConn)
-	if !ok {
-		xlog.ErrorLogNoInScene("转换 *TcpConn 失败")
-		return nil
-	}
+	server.mutexConns.RLock()
+	tcpconn := server.connMaps[connID]
+	server.mutexConns.RUnlock()
 	return tcpconn
 }

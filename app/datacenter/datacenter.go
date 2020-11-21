@@ -9,9 +9,10 @@ package datacenter
 
 import (
 	"errors"
+	"time"
+	"wengo/app/appdata"
 	"wengo/app/datacenter/dcmodel"
 	"wengo/app/netmsgsys"
-	"wengo/appdata"
 	"wengo/cmdconst"
 	"wengo/cmdconst/cmdaccount"
 	"wengo/cmdconst/cmddatacenter"
@@ -20,15 +21,12 @@ import (
 	"wengo/network"
 	"wengo/protobuf/pb/common_proto"
 	"wengo/timersys"
-	"sync"
-	"time"
 )
 
 
 
 type DataCenter struct {
 	tcpserver  *network.TCPServer
-	conns      sync.Map
 	dispSys    *dispatch.DispatchSys
 	netmsgsys  *netmsgsys.NetMsgSys
 	oneSTimeID uint32  //定时器id
@@ -57,7 +55,7 @@ func (this *DataCenter)OnInit() bool{
 	this.dispSys = dispatch.NewDispatchSys()
 	this.dispSys.SetNetObserver(this)
 	// 处理其他服务器的连接
-	this.tcpserver = network.NewTcpServer(this.dispSys, appdata.NetConf,appdata.WorkPool)
+	this.tcpserver = network.NewTcpServer(this.dispSys, appdata.NetConf, appdata.WorkPool)
 	this.netmsgsys = netmsgsys.NewMsgHandler()
 	this.tcpserver.Start()
 	this.RegisterMsg()
@@ -71,7 +69,6 @@ func (this *DataCenter)OnInit() bool{
 func (this *DataCenter)OnRelease(){
 	this.tcpserver.Close()
 	this.dispSys.Release()
-	network.Release()
 	ClearAllServerData()
 }
 

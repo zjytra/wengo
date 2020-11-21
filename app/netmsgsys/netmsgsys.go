@@ -10,7 +10,7 @@ package netmsgsys
 import (
 	"errors"
 	"fmt"
-	"wengo/appdata"
+	"wengo/app/appdata"
 	"wengo/dispatch"
 	"wengo/network"
 	"wengo/xlog"

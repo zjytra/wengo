@@ -7,7 +7,7 @@
 package datacenter
 
 import (
-	"wengo/appdata"
+	"wengo/app/appdata"
 	"wengo/xlog"
 )
 

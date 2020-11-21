@@ -8,8 +8,8 @@
 package apploginsv
 
 import (
+	"wengo/app/appdata"
 	"wengo/app/netmsgsys"
-	"wengo/appdata"
 	"wengo/dispatch"
 )
 

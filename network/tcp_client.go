@@ -114,7 +114,7 @@ func (client *TCPClient) setConn(conn net.Conn) bool {
 		conn.Close()
 		return false
 	}
-	tcpconn := newTcpConn(conn, connIDs.GetId(), client.netObserver, client.netConf, client.workPool,client.msgParser)
+	tcpconn := newTcpConn(conn, nextID(), client.netObserver, client.netConf, client.workPool,client.msgParser)
 	client.tcpconn = tcpconn
 	xlog.DebugLogNoInScene( "连接远程 %v 地址成功", conn.RemoteAddr())
 	// 连接成功,将阻塞读取数据

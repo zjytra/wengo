@@ -8,11 +8,11 @@
 package appgatesv
 
 import (
-	"wengo/appdata"
+	"sync"
+	"wengo/app/appdata"
 	"wengo/dispatch"
 	"wengo/network"
 	"wengo/xlog"
-	"sync"
 )
 
 
@@ -31,7 +31,7 @@ func (this *GateServer)OnStart() {
 		panic("GateServer OnStart  this.dispSys == nil  ")
 	}
 	this.dispSys.SetNetObserver(this)
-	this.tcpserver = network.NewTcpServer(this.dispSys, appdata.NetConf,appdata.WorkPool)
+	this.tcpserver = network.NewTcpServer(this.dispSys, appdata.NetConf, appdata.WorkPool)
 	this.tcpserver.Start()
 }
 

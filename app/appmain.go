@@ -7,19 +7,18 @@ package app
 import (
 	"flag"
 	"fmt"
+	_ "net/http/pprof"
+	"time"
 	"wengo/app/appclient"
+	"wengo/app/appdata"
 	"wengo/app/appgate"
 	"wengo/app/apploginsv"
 	"wengo/app/datacenter"
-	"wengo/appdata"
 	"wengo/conf"
 	"wengo/csvdata"
-	"wengo/global"
 	"wengo/model"
 	"wengo/xengine"
 	"wengo/xlog"
-	_ "net/http/pprof"
-	"time"
 )
 
 // 这里app 的初始化工作
@@ -32,8 +31,6 @@ func init() {
 // 2. 设置app参数
 func (this *App)AppStart() {
 	fmt.Println("App AppStart")
-	//拉起宕机
-	defer global.GrecoverToStd()
 	appdata.InitAppData()
 	this.ParseAppArgs() //获取命令行
 	this.InitApp()      //解析完命令再启动对应程序

@@ -10,7 +10,7 @@ package dispatch
 import (
 	"errors"
 	"fmt"
-	"wengo/appdata"
+	"wengo/app/appdata"
 	"wengo/model"
 	"wengo/network"
 	"wengo/xlog"

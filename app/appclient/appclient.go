@@ -8,8 +8,10 @@
 package appclient
 
 import (
+	"sync"
+	"time"
+	"wengo/app/appdata"
 	"wengo/app/netmsgsys"
-	"wengo/appdata"
 	"wengo/cmdconst"
 	"wengo/cmdconst/cmdaccount"
 	"wengo/csvdata"
@@ -20,8 +22,6 @@ import (
 	"wengo/timersys"
 	"wengo/xlog"
 	"wengo/xutil/osutil"
-	"sync"
-	"time"
 )
 
 type AppClient struct {

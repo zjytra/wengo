@@ -18,7 +18,6 @@ import (
 	"wengo/model/dbmodels"
 	"wengo/xcontainer/queue"
 	"wengo/xutil"
-	"wengo/xutil/timeutil"
 	"reflect"
 	"strings"
 	"sync"
@@ -46,7 +45,7 @@ func Test(t *timingwheel.Timer) {
 		t.Stop()
 		fmt.Println("Test stop")
 	}
-	i ++
+	i++
 }
 
 // param |加密key| 主命令 | 字命令 | datalen | data |
@@ -55,27 +54,27 @@ func UnpackOne(readb []byte) (maincmd uint16, subcmd uint16, msg []byte, err err
 	if readb == nil || msglen == 0 {
 		return
 	}
-    var start,end int
-	start,end = GetNextIndex(end,maincmd)
+	var start, end int
+	start, end = GetNextIndex(end, maincmd)
 	maincmd = binary.LittleEndian.Uint16(readb[start:end])
-	start,end = GetNextIndex(end,subcmd)
+	start, end = GetNextIndex(end, subcmd)
 	subcmd = binary.LittleEndian.Uint16(readb[start:end])
 	var datalen uint32
-	start,end = GetNextIndex(end,datalen)
+	start, end = GetNextIndex(end, datalen)
 	datalen = binary.LittleEndian.Uint32(readb[start:end])
 	msg = make([]byte, datalen)
-	copy(msg,readb[end:])
+	copy(msg, readb[end:])
 	return
 }
 
-func GetNextIndex(end int,data interface{})(head,tail int)   {
-	head = end //尾部变成头部
+func GetNextIndex(end int, data interface{}) (head, tail int) {
+	head = end                            //尾部变成头部
 	tail = head + xutil.IntDataSize(data) //新的尾部=头加上数据的长度
 	return
 }
 
 // 打单包
-func  PackOne(maincmd, subcmd uint16, msg []byte) ([]byte, error) {
+func PackOne(maincmd, subcmd uint16, msg []byte) ([]byte, error) {
 	msglen := uint32(len(msg))
 	// 加密key
 	var alllen int
@@ -83,53 +82,53 @@ func  PackOne(maincmd, subcmd uint16, msg []byte) ([]byte, error) {
 	alllen += xutil.IntDataSize(subcmd)
 	alllen += xutil.IntDataSize(msglen)
 	alllen += int(msglen)
-	writeBuf := make([]byte,alllen)
-	var start,end int
-	start,end = GetNextIndex(end,maincmd)
-	binary.LittleEndian.PutUint16(writeBuf[start:end],maincmd)
-	start,end = GetNextIndex(end,subcmd)
-	binary.LittleEndian.PutUint16(writeBuf[start:end],subcmd)
-	start,end = GetNextIndex(end,msglen)
-	binary.LittleEndian.PutUint32(writeBuf[start:end],msglen)
-	copy(writeBuf[end:],msg)
+	writeBuf := make([]byte, alllen)
+	var start, end int
+	start, end = GetNextIndex(end, maincmd)
+	binary.LittleEndian.PutUint16(writeBuf[start:end], maincmd)
+	start, end = GetNextIndex(end, subcmd)
+	binary.LittleEndian.PutUint16(writeBuf[start:end], subcmd)
+	start, end = GetNextIndex(end, msglen)
+	binary.LittleEndian.PutUint32(writeBuf[start:end], msglen)
+	copy(writeBuf[end:], msg)
 	return writeBuf, nil
 }
 
 type RowStringMap map[string]interface{}
 
-func testQuery(rows *sql.Rows,to interface{})  {
-	acc:= dbsys.RowsToStructSlice(rows,to)
+func testQuery(rows *sql.Rows, to interface{}) {
+	acc := dbsys.RowsToStructSlice(rows, to)
 	for _, data := range acc {
 		ptr := data.(*dbmodels.Accounts)
 		fmt.Println(ptr)
 	}
 }
 
-func DBTest()  {
+func DBTest() {
 	csvdata.SetDbconfMapData("./csv")
 	conf := csvdata.GetDbconfPtr("gamedb")
 	datasource := dbsys.GetMysqlDataSourceName(conf)
 	db, Erro := sql.Open("mysql", datasource)
 	if Erro != nil {
-		fmt.Printf("%v \n",Erro)
+		fmt.Printf("%v \n", Erro)
 		return
 	}
 	now := time.Now()
-	rows,erro := db.Query("SELECT * FROM Accounts where AccountID = 1")
+	rows, erro := db.Query("SELECT * FROM Accounts where AccountID = 1")
 	if erro != nil {
-		fmt.Printf("%v \n",erro)
+		fmt.Printf("%v \n", erro)
 		return
 	}
 	end := time.Now()
-	fmt.Printf("Query time %v \n",end.Sub(now).Microseconds())
+	fmt.Printf("Query time %v \n", end.Sub(now).Microseconds())
 	// pacc := dbsys.RowsToStructSlice(rows,reflect.TypeOf(&dbmodels.Accounts{}))
 	acc := new(dbmodels.Accounts)
-	dbsys.RowToStruct(rows,acc)
+	dbsys.RowToStruct(rows, acc)
 	fmt.Println(acc)
 	// testQuery(rows,dbmodels.Accounts{})
 	// var t time.Time
 	// types , erro:= rows.ColumnTypes()
-
+	
 	// var  nt mysql.NullTime
 	// for rows.Next() {
 	// 	rows.Scan(&nt)
@@ -153,14 +152,26 @@ func DBTest()  {
 	// fmt.Println(a)
 }
 
-
-
 func main() {
 	//DBTest()
-	fmt.Println(timeutil.GetYearMonthFromatStrByTimeString("2006-01-02 15:04:05.000"))
+	
+	tmap := make(map[int]int)
+	
+	for i := 0; i < 10; i++ {
+		tmap[i] = i * 2
+	}
+	fmt.Println(tmap)
+	
+	for k,_ := range tmap{
+		delete(tmap,k)
+	}
+	
+	fmt.Println(tmap)
+	
+	
 }
 
-func TestList()  {
+func TestList() {
 	//初始化一个list
 	l := list.New()
 	l.PushBack(1)

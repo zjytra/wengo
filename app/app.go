@@ -7,13 +7,13 @@ package app
 
 import (
 	"fmt"
-	"wengo/appdata"
+	"sync"
+	"time"
+	"wengo/app/appdata"
 	"wengo/model"
 	"wengo/timersys"
 	"wengo/xengine"
 	"wengo/xlog"
-	"sync"
-	"time"
 )
 
 

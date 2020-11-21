@@ -10,10 +10,10 @@ package app
 import (
 	"bufio"
 	"fmt"
-	"wengo/csvdata"
-	"wengo/appdata"
 	"os"
 	"strings"
+	"wengo/app/appdata"
+	"wengo/csvdata"
 )
 
 //读取控制台命令

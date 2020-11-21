@@ -9,13 +9,13 @@ package appworldsv
 
 import (
 	"errors"
+	"sync"
+	"wengo/app/appdata"
 	"wengo/app/netmsgsys"
-	"wengo/appdata"
 	"wengo/csvdata"
 	"wengo/dispatch"
 	"wengo/network"
 	"wengo/xlog"
-	"sync"
 )
 
 
@@ -38,7 +38,7 @@ func (this *WorldServer)OnInit() bool{
 	this.dispSys = dispatch.NewDispatchSys()
 	this.dispSys.SetNetObserver(this)
 	// 处理其他服务器的连接
-	this.tcpserver = network.NewTcpServer(this.dispSys, appdata.NetConf,appdata.WorkPool)
+	this.tcpserver = network.NewTcpServer(this.dispSys, appdata.NetConf, appdata.WorkPool)
 	this.netmsgsys = netmsgsys.NewMsgHandler()
 	this.tcpserver.Start()
 	this.RegisterMsg()

@@ -9,8 +9,9 @@ package apploginsv
 
 import (
 	"github.com/panjf2000/ants/v2"
+	"time"
+	"wengo/app/appdata"
 	"wengo/app/netmsgsys"
-	"wengo/appdata"
 	"wengo/cmdconst"
 	"wengo/cmdconst/cmdaccount"
 	"wengo/cmdconst/cmddatacenter"
@@ -20,7 +21,6 @@ import (
 	"wengo/protobuf/pb/dc_proto"
 	"wengo/timersys"
 	"wengo/xlog"
-	"time"
 )
 
 type DataCenterMsgHandler struct {

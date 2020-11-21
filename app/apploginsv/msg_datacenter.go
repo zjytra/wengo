@@ -10,8 +10,9 @@ package apploginsv
 import (
 	"errors"
 	"github.com/golang/protobuf/proto"
+	"time"
+	"wengo/app/appdata"
 	"wengo/app/datacenter/dcmodel"
-	"wengo/appdata"
 	"wengo/cmdconst"
 	"wengo/cmdconst/cmddatacenter"
 	"wengo/network"
@@ -19,7 +20,6 @@ import (
 	"wengo/protobuf/pb/dc_proto"
 	"wengo/xlog"
 	"wengo/xutil/timeutil"
-	"time"
 )
 
 //连接到数据服务器

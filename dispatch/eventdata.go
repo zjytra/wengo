@@ -8,9 +8,9 @@
 package dispatch
 
 import (
-	"wengo/appdata"
-	"wengo/xlog"
 	"sync"
+	"wengo/app/appdata"
+	"wengo/xlog"
 )
 
 type EventData struct {

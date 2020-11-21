@@ -117,7 +117,7 @@ func (client *ServeiceClient) setConn(conn net.Conn) bool {
 		conn.Close()
 		return false
 	}
-	svconn := newServiceConn(conn, connIDs.GetId(), client.svNet, client.netConf, client.workPool, client.msgParser)
+	svconn := newServiceConn(conn, nextID(), client.svNet, client.netConf, client.workPool, client.msgParser)
 	client.conn = svconn
 	xlog.DebugLogNoInScene("连接远程 %v 地址成功", conn.RemoteAddr())
 	// 连接成功,将阻塞读取数据
