@@ -6,7 +6,7 @@
 */
 package netmsgsys
 
-import "wengo/xutil/timeutil"
+import "github.com/zjytra/wengo/xutil/timeutil"
 
 var(
 	AccountRegiter  map[string]int64 //账号注册验证

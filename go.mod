@@ -1,4 +1,4 @@
-module wengo
+module github.com/zjytra/wengo
 
 go 1.15
 

@@ -10,7 +10,7 @@ package conf
 import (
 	"encoding/json"
 	"fmt"
-	"wengo/xlog"
+	"github.com/zjytra/wengo/xlog"
 	"os"
 )
 

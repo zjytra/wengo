@@ -8,8 +8,8 @@
 package timersys
 
 import (
-	"wengo/timingwheel"
-	"wengo/model"
+	"github.com/zjytra/wengo/timingwheel"
+	"github.com/zjytra/wengo/model"
 	"sync"
 	"time"
 )

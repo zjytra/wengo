@@ -8,9 +8,9 @@
 package apploginsv
 
 import (
-	"wengo/app/appdata"
-	"wengo/app/netmsgsys"
-	"wengo/dispatch"
+	"github.com/zjytra/wengo/app/appdata"
+	"github.com/zjytra/wengo/app/netmsgsys"
+	"github.com/zjytra/wengo/dispatch"
 )
 
 var (

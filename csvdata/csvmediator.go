@@ -9,7 +9,7 @@ package csvdata
 
 import (
 	"fmt"
-	"wengo/xutil/strutil"
+	"github.com/zjytra/wengo/xutil/strutil"
 )
 
 var (

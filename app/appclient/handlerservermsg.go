@@ -9,10 +9,10 @@ package appclient
 
 import (
 	"github.com/golang/protobuf/proto"
-	"wengo/network"
-	"wengo/protobuf/pb/account_proto"
-	"wengo/protobuf/pb/common_proto"
-	"wengo/xlog"
+	"github.com/zjytra/wengo/network"
+	"github.com/zjytra/wengo/protobuf/pb/account_proto"
+	"github.com/zjytra/wengo/protobuf/pb/common_proto"
+	"github.com/zjytra/wengo/xlog"
 )
 
 //注册消息回复

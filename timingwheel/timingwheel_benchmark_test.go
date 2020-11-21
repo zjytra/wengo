@@ -4,7 +4,7 @@ import (
 	"testing"
 	"time"
 
-	"wengo/timingwheel"
+	"github.com/zjytra/wengo/timingwheel"
 )
 
 func genD(i int) time.Duration {

@@ -9,8 +9,8 @@ package dispatch
 
 import (
 	"errors"
-	"wengo/network"
-	"wengo/xlog"
+	"github.com/zjytra/wengo/network"
+	"github.com/zjytra/wengo/xlog"
 )
 
 

@@ -10,8 +10,8 @@ package csvparse
 import (
 	"encoding/csv"
 	"fmt"
-	"wengo/xutil"
-	"wengo/xutil/strutil"
+	"github.com/zjytra/wengo/xutil"
+	"github.com/zjytra/wengo/xutil/strutil"
 	"os"
 	"reflect"
 	"strconv"

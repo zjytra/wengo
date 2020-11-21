@@ -10,17 +10,17 @@ package datacenter
 import (
 	"errors"
 	"time"
-	"wengo/app/appdata"
-	"wengo/app/datacenter/dcmodel"
-	"wengo/app/netmsgsys"
-	"wengo/cmdconst"
-	"wengo/cmdconst/cmdaccount"
-	"wengo/cmdconst/cmddatacenter"
-	"wengo/dbsys"
-	"wengo/dispatch"
-	"wengo/network"
-	"wengo/protobuf/pb/common_proto"
-	"wengo/timersys"
+	"github.com/zjytra/wengo/app/appdata"
+	"github.com/zjytra/wengo/app/datacenter/dcmodel"
+	"github.com/zjytra/wengo/app/netmsgsys"
+	"github.com/zjytra/wengo/cmdconst"
+	"github.com/zjytra/wengo/cmdconst/cmdaccount"
+	"github.com/zjytra/wengo/cmdconst/cmddatacenter"
+	"github.com/zjytra/wengo/dbsys"
+	"github.com/zjytra/wengo/dispatch"
+	"github.com/zjytra/wengo/network"
+	"github.com/zjytra/wengo/protobuf/pb/common_proto"
+	"github.com/zjytra/wengo/timersys"
 )
 
 

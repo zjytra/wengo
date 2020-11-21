@@ -6,7 +6,7 @@
 */
 package apploginsv
 
-import "wengo/network"
+import "github.com/zjytra/wengo/network"
 
 
 //客户端请求获取角色列表

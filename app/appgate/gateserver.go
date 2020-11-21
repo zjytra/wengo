@@ -9,10 +9,10 @@ package appgatesv
 
 import (
 	"sync"
-	"wengo/app/appdata"
-	"wengo/dispatch"
-	"wengo/network"
-	"wengo/xlog"
+	"github.com/zjytra/wengo/app/appdata"
+	"github.com/zjytra/wengo/dispatch"
+	"github.com/zjytra/wengo/network"
+	"github.com/zjytra/wengo/xlog"
 )
 
 
@@ -49,7 +49,6 @@ func (this *GateServer)OnUpdate() bool{
 func (this *GateServer)OnRelease(){
 	this.tcpserver.Close()
 	this.dispSys.Release()
-	network.Release()
 }
 
 func (this *GateServer)OnNetWorkConnect(conn network.Conner) error{

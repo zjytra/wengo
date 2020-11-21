@@ -6,7 +6,7 @@ import (
 	"time"
 	"unsafe"
 
-	"wengo/timingwheel/delayqueue"
+	"github.com/zjytra/wengo/timingwheel/delayqueue"
 )
 
 // TimingWheel is an implementation of Hierarchical Timing Wheels.

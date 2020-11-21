@@ -11,10 +11,10 @@ import (
 	"github.com/panjf2000/ants/v2"
 	"os"
 	"time"
-	"wengo/conf"
-	"wengo/csvdata"
-	"wengo/model"
-	"wengo/xengine"
+	"github.com/zjytra/wengo/conf"
+	"github.com/zjytra/wengo/csvdata"
+	"github.com/zjytra/wengo/model"
+	"github.com/zjytra/wengo/xengine"
 )
 
 var (

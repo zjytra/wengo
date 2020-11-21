@@ -10,12 +10,12 @@ package appworldsv
 import (
 	"errors"
 	"sync"
-	"wengo/app/appdata"
-	"wengo/app/netmsgsys"
-	"wengo/csvdata"
-	"wengo/dispatch"
-	"wengo/network"
-	"wengo/xlog"
+	"github.com/zjytra/wengo/app/appdata"
+	"github.com/zjytra/wengo/app/netmsgsys"
+	"github.com/zjytra/wengo/csvdata"
+	"github.com/zjytra/wengo/dispatch"
+	"github.com/zjytra/wengo/network"
+	"github.com/zjytra/wengo/xlog"
 )
 
 

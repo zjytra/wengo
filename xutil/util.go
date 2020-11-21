@@ -10,7 +10,7 @@ package xutil
 import (
 	"errors"
 	"fmt"
-	"wengo/xutil/strutil"
+	"github.com/zjytra/wengo/xutil/strutil"
 	"math"
 	"path"
 	"runtime"

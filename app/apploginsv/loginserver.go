@@ -8,8 +8,7 @@
 package apploginsv
 
 import (
-	"wengo/network"
-	"wengo/timersys"
+	"github.com/zjytra/wengo/timersys"
 	"time"
 )
 
@@ -42,7 +41,6 @@ func (this *LogionServer)OnUpdate(){
 // 关闭
 func (this *LogionServer)OnRelease(){
 	ReleaseData()
-	network.Release()
 }
 
 func (this *LogionServer)AddTimer(){

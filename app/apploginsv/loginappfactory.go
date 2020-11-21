@@ -8,7 +8,7 @@
 package apploginsv
 
 import (
-     "wengo/xengine"
+     "github.com/zjytra/wengo/xengine"
 )
 
 

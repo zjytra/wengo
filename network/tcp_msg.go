@@ -3,8 +3,8 @@ package network
 import (
 	"encoding/binary"
 	"errors"
-	"wengo/xlog"
-	"wengo/xutil"
+	"github.com/zjytra/wengo/xlog"
+	"github.com/zjytra/wengo/xutil"
 	"io"
 	"math"
 )

@@ -9,8 +9,8 @@ package dispatch
 
 import (
 	"errors"
-	"wengo/xcontainer/queue"
-	"wengo/xlog"
+	"github.com/zjytra/wengo/xcontainer/queue"
+	"github.com/zjytra/wengo/xlog"
 	"sync"
 )
 

@@ -12,12 +12,12 @@ import (
 	"errors"
 	"fmt"
 	_ "github.com/go-sql-driver/mysql"
-	"wengo/csvdata"
-	"wengo/dispatch"
-	"wengo/xlog"
-	"wengo/xutil"
-	"wengo/xutil/osutil"
-	"wengo/xutil/strutil"
+	"github.com/zjytra/wengo/csvdata"
+	"github.com/zjytra/wengo/dispatch"
+	"github.com/zjytra/wengo/xlog"
+	"github.com/zjytra/wengo/xutil"
+	"github.com/zjytra/wengo/xutil/osutil"
+	"github.com/zjytra/wengo/xutil/strutil"
 )
 
 const (

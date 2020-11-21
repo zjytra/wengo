@@ -7,7 +7,7 @@
 package main
 
 import (
-	"wengo/app"
+	"github.com/zjytra/github.com/zjytra/wengo/app"
 	"runtime"
 )
 

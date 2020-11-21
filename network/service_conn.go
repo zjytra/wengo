@@ -16,10 +16,10 @@ import (
 	"github.com/golang/protobuf/proto"
 	"github.com/panjf2000/ants/v2"
 	"net"
-	"wengo/app/appdata"
-	"wengo/csvdata"
-	"wengo/xlog"
-	"wengo/xutil/timeutil"
+	"github.com/zjytra/wengo/app/appdata"
+	"github.com/zjytra/wengo/csvdata"
+	"github.com/zjytra/wengo/xlog"
+	"github.com/zjytra/wengo/xutil/timeutil"
 )
 
 //复用连接部分方法

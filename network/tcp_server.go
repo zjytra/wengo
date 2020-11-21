@@ -8,11 +8,11 @@ import (
 	"net"
 	"sync"
 	"time"
-	"wengo/app/appdata"
-	"wengo/csvdata"
-	"wengo/model"
-	"wengo/timersys"
-	"wengo/xlog"
+	"github.com/zjytra/wengo/app/appdata"
+	"github.com/zjytra/wengo/csvdata"
+	"github.com/zjytra/wengo/model"
+	"github.com/zjytra/wengo/timersys"
+	"github.com/zjytra/wengo/xlog"
 )
 
 

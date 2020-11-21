@@ -12,8 +12,8 @@ import (
 	"fmt"
 	"os"
 	"strings"
-	"wengo/app/appdata"
-	"wengo/csvdata"
+	"github.com/zjytra/wengo/app/appdata"
+	"github.com/zjytra/wengo/csvdata"
 )
 
 //读取控制台命令

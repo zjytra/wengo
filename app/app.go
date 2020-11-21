@@ -9,11 +9,11 @@ import (
 	"fmt"
 	"sync"
 	"time"
-	"wengo/app/appdata"
-	"wengo/model"
-	"wengo/timersys"
-	"wengo/xengine"
-	"wengo/xlog"
+	"github.com/zjytra/wengo/app/appdata"
+	"github.com/zjytra/wengo/model"
+	"github.com/zjytra/wengo/timersys"
+	"github.com/zjytra/wengo/xengine"
+	"github.com/zjytra/wengo/xlog"
 )
 
 

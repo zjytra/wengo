@@ -7,10 +7,10 @@
 package apploginsv
 
 import (
-	"wengo/cmdconst"
-	"wengo/cmdconst/cmdaccount"
-	"wengo/model"
-	"wengo/protobuf/pb/account_proto"
+	"github.com/zjytra/wengo/cmdconst"
+	"github.com/zjytra/wengo/cmdconst/cmdaccount"
+	"github.com/zjytra/wengo/model"
+	"github.com/zjytra/wengo/protobuf/pb/account_proto"
 )
 
 type LoginAccountMgr struct {
