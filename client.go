@@ -7,8 +7,9 @@
 package main
 
 import (
+	"context"
 	"fmt"
-	"github.com/go-redis/redis"
+	"github.com/go-redis/redis/v8"
 	"github.com/zjytra/wengo/app"
 	"runtime"
 	"time"
@@ -17,6 +18,8 @@ import (
 func init() {
 }
 
+var ctx = context.Background()
+
 func TestRedis() {
 	rediscli := redis.NewClient(&redis.Options{
 		Addr:     "localhost:6379",
@@ -24,17 +27,17 @@ func TestRedis() {
 		DB:       0,  // use default DB
 	})
 	
-	_, erro := rediscli.Ping().Result()
+	_, erro := rediscli.Ping(ctx).Result()
 	if erro != nil {
 		fmt.Print(erro)
 		return
 	}
-	erro = rediscli.Set("woshishui", "jiaopige", time.Minute*2).Err()
+	erro = rediscli.Set(ctx, "woshishui", "jiaopige", time.Minute*2).Err()
 	if erro != nil {
 		fmt.Print(erro)
 		return
 	}
-	getval := rediscli.Get("woshishui")
+	getval := rediscli.Get(ctx,"woshishui")
 	if geterro := getval.Err(); geterro != nil {
 		if geterro == redis.Nil {
 			fmt.Println("key does not exists")
