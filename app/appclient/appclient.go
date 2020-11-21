@@ -8,18 +8,18 @@
 package appclient
 
 import (
-	"github.com/wengo/app/netmsgsys"
-	"github.com/wengo/appdata"
-	"github.com/wengo/cmdconst"
-	"github.com/wengo/cmdconst/cmdaccount"
-	"github.com/wengo/csvdata"
-	"github.com/wengo/dispatch"
-	"github.com/wengo/model"
-	"github.com/wengo/network"
-	"github.com/wengo/protobuf/pb/account_proto"
-	"github.com/wengo/timersys"
-	"github.com/wengo/xlog"
-	"github.com/wengo/xutil/osutil"
+	"wengo/app/netmsgsys"
+	"wengo/appdata"
+	"wengo/cmdconst"
+	"wengo/cmdconst/cmdaccount"
+	"wengo/csvdata"
+	"wengo/dispatch"
+	"wengo/model"
+	"wengo/network"
+	"wengo/protobuf/pb/account_proto"
+	"wengo/timersys"
+	"wengo/xlog"
+	"wengo/xutil/osutil"
 	"sync"
 	"time"
 )
@@ -98,10 +98,9 @@ func (this *AppClient) TestLoginAccount(conn network.Conner) {
 
 
 // 发送心跳给世界服
-func (this *AppClient) TestTimer() {
+func (this *AppClient) TestTimerTestTimer() {
 	defer xlog.RecoverToLog(func() {
 		timersys.StopTimer(this.sndHeartTimer)
-		this.sndHeartTimer = timersys.NewWheelTimer(time.Second  * 5,this.TestTimer,this.dispSys)
 	})
 	//账号登录
 	this.TestLoginAccount(nil)

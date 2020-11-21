@@ -2,9 +2,9 @@ package dcmodel
 
 import (
 	"container/list"
-	"github.com/wengo/model/dbmodels"
-	"github.com/wengo/xlog"
-	"github.com/wengo/xutil/timeutil"
+	"wengo/model/dbmodels"
+	"wengo/xlog"
+	"wengo/xutil/timeutil"
 )
 
 //账号管理

@@ -2,14 +2,14 @@ package datacenter
 
 import (
 	"github.com/golang/protobuf/proto"
-	"github.com/wengo/app/datacenter/dcdbmodel"
-	"github.com/wengo/cmdconst"
-	"github.com/wengo/cmdconst/cmdaccount"
-	"github.com/wengo/dbsys"
-	"github.com/wengo/msgcode"
-	"github.com/wengo/network"
-	"github.com/wengo/protobuf/pb/account_proto"
-	"github.com/wengo/xlog"
+	"wengo/app/datacenter/dcdbmodel"
+	"wengo/cmdconst"
+	"wengo/cmdconst/cmdaccount"
+	"wengo/dbsys"
+	"wengo/msgcode"
+	"wengo/network"
+	"wengo/protobuf/pb/account_proto"
+	"wengo/xlog"
 )
 
 //////////////////////////////////账号注册//////////////////////////////////

@@ -6,11 +6,11 @@ package network
 import (
 	"errors"
 	"fmt"
-	"github.com/panjf2000/ants"
-	"github.com/wengo/cmdconst"
-	"github.com/wengo/csvdata"
-	"github.com/wengo/xlog"
-	"github.com/wengo/xutil/timeutil"
+	"github.com/panjf2000/ants/v2"
+	"wengo/cmdconst"
+	"wengo/csvdata"
+	"wengo/xlog"
+	"wengo/xutil/timeutil"
 	"net"
 	"sync"
 )

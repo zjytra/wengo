@@ -9,21 +9,22 @@ package global
 
 import (
 	"fmt"
-	"github.com/snowflake"
+	"github.com/sony/sonyflake"
 	"runtime"
+	"time"
 )
 
 
 
 var (
-	SnowGid  *snowflake.NodeGID //雪花算法gid生成
-) // 协程池
+	Sonyflk *sonyflake.Sonyflake //雪花算法gid生成
+)
 
-
-func InitGid(nodeId int16) bool  {
-	var erro error
-	SnowGid,erro = snowflake.NewNodeGID(nodeId,12)
-	if erro != nil {
+func InitGid(t time.Time) bool  {
+	var st sonyflake.Settings
+	st.StartTime = t
+	Sonyflk = sonyflake.NewSonyflake(st)
+	if Sonyflk == nil {
 		return false
 	}
 	return true

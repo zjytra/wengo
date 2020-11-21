@@ -10,12 +10,12 @@ package dispatch
 import (
 	"errors"
 	"fmt"
-	"github.com/wengo/appdata"
-	"github.com/wengo/model"
-	"github.com/wengo/network"
-	"github.com/wengo/xlog"
-	"github.com/wengo/xutil"
-	"github.com/wengo/xutil/timeutil"
+	"wengo/appdata"
+	"wengo/model"
+	"wengo/network"
+	"wengo/xlog"
+	"wengo/xutil"
+	"wengo/xutil/timeutil"
 )
 
 //type DispatchNoticeFun func(interface{}) error // 对应的解析函数

@@ -7,7 +7,7 @@
 package main
 
 import (
-	"github.com/wengo/app"
+	"wengo/app"
 	"runtime"
 )
 // main 初始化工作

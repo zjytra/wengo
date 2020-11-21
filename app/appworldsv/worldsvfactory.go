@@ -8,7 +8,7 @@
 package appworldsv
 
 import (
-     "github.com/wengo/xengine"
+     "wengo/xengine"
 )
 
 

@@ -7,7 +7,7 @@
 
 package csvdata
 
-import "github.com/panjf2000/ants"
+import "github.com/panjf2000/ants/v2"
 
 //初始化登陆服数据
 func LoadLoginCsvData( )  {

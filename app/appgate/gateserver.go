@@ -8,10 +8,10 @@
 package appgatesv
 
 import (
-	"github.com/wengo/appdata"
-	"github.com/wengo/dispatch"
-	"github.com/wengo/network"
-	"github.com/wengo/xlog"
+	"wengo/appdata"
+	"wengo/dispatch"
+	"wengo/network"
+	"wengo/xlog"
 	"sync"
 )
 

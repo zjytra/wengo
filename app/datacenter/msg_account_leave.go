@@ -10,12 +10,12 @@ import (
 	"errors"
 	"fmt"
 	"github.com/golang/protobuf/proto"
-	"github.com/wengo/app/datacenter/dcmodel"
-	"github.com/wengo/network"
-	"github.com/wengo/protobuf/pb/account_proto"
-	"github.com/wengo/xlog"
-	"github.com/wengo/xutil/osutil"
-	"github.com/wengo/xutil/timeutil"
+	"wengo/app/datacenter/dcmodel"
+	"wengo/network"
+	"wengo/protobuf/pb/account_proto"
+	"wengo/xlog"
+	"wengo/xutil/osutil"
+	"wengo/xutil/timeutil"
 )
 
 //////////////////////////////////账号离线//////////////////////////////////

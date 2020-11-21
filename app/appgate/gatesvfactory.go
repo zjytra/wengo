@@ -8,7 +8,7 @@
 package appgatesv
 
 import (
-     "github.com/wengo/xengine"
+     "wengo/xengine"
 )
 
 

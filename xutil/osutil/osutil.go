@@ -9,7 +9,7 @@ package osutil
 
 import (
 	"fmt"
-	"github.com/wengo/xutil/strutil"
+	"wengo/xutil/strutil"
 	"net"
 	"os"
 	"runtime"

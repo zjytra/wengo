@@ -7,11 +7,11 @@ package app
 
 import (
 	"fmt"
-	"github.com/wengo/appdata"
-	"github.com/wengo/model"
-	"github.com/wengo/timersys"
-	"github.com/wengo/xengine"
-	"github.com/wengo/xlog"
+	"wengo/appdata"
+	"wengo/model"
+	"wengo/timersys"
+	"wengo/xengine"
+	"wengo/xlog"
 	"sync"
 	"time"
 )

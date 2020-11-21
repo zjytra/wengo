@@ -8,7 +8,7 @@
 package datacenter
 
 import (
-     "github.com/wengo/xengine"
+     "wengo/xengine"
 )
 
 

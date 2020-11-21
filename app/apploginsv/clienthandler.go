@@ -8,13 +8,13 @@
 package apploginsv
 
 import (
-	"github.com/panjf2000/ants"
-	"github.com/wengo/app/netmsgsys"
-	"github.com/wengo/cmdconst"
-	"github.com/wengo/cmdconst/cmdaccount"
-	"github.com/wengo/csvdata"
-	"github.com/wengo/dispatch"
-	"github.com/wengo/network"
+	"github.com/panjf2000/ants/v2"
+	"wengo/app/netmsgsys"
+	"wengo/cmdconst"
+	"wengo/cmdconst/cmdaccount"
+	"wengo/csvdata"
+	"wengo/dispatch"
+	"wengo/network"
 )
 
 type ClientHandler struct {

@@ -9,12 +9,12 @@ package appworldsv
 
 import (
 	"errors"
-	"github.com/wengo/app/netmsgsys"
-	"github.com/wengo/appdata"
-	"github.com/wengo/csvdata"
-	"github.com/wengo/dispatch"
-	"github.com/wengo/network"
-	"github.com/wengo/xlog"
+	"wengo/app/netmsgsys"
+	"wengo/appdata"
+	"wengo/csvdata"
+	"wengo/dispatch"
+	"wengo/network"
+	"wengo/xlog"
 	"sync"
 )
 

@@ -7,8 +7,8 @@
 package datacenter
 
 import (
-	"github.com/wengo/appdata"
-	"github.com/wengo/xlog"
+	"wengo/appdata"
+	"wengo/xlog"
 )
 
 // 每秒定时器

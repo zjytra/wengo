@@ -8,8 +8,8 @@
 package apploginsv
 
 import (
-	"github.com/wengo/network"
-	"github.com/wengo/timersys"
+	"wengo/network"
+	"wengo/timersys"
 	"time"
 )
 
@@ -46,7 +46,7 @@ func (this *LogionServer)OnRelease(){
 }
 
 func (this *LogionServer)AddTimer(){
-	this.oneMinuteTimeID = timersys.NewWheelTimer(time.Minute,this.PerOneMinuteTimer,DispSys) //每分钟调用
+	this.oneMinuteTimeID = timersys.NewWheelTimer(time.Minute, this.PerOneMinuteTimer,DispSys) //每分钟调用
 }
 
 func (this *LogionServer)ReleaseTimer(){

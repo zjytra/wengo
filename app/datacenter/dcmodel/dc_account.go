@@ -6,7 +6,7 @@
 */
 package dcmodel
 
-import "github.com/wengo/model/dbmodels"
+import "wengo/model/dbmodels"
 
 const (
 	AccountState_None  = 0

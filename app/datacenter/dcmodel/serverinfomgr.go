@@ -7,8 +7,8 @@
 package dcmodel
 
 import (
-	"github.com/wengo/model"
-	"github.com/wengo/xlog"
+	"wengo/model"
+	"wengo/xlog"
 )
 
 type ServerInfoMgr struct {

@@ -10,9 +10,9 @@ package xlog
 
 import (
 	"fmt"
-	"github.com/wengo/model"
-	"github.com/wengo/xutil/osutil"
-	"github.com/wengo/xutil/timeutil"
+	"wengo/model"
+	"wengo/xutil/osutil"
+	"wengo/xutil/timeutil"
 	"io"
 	"log"
 	"os"

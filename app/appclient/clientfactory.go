@@ -8,7 +8,7 @@
 package appclient
 
 import (
-     "github.com/wengo/xengine"
+     "wengo/xengine"
 )
 
 

@@ -9,9 +9,9 @@ package dbsys
 import (
 	"database/sql"
 	"fmt"
-	"github.com/wengo/csvdata"
-	"github.com/wengo/dispatch"
-	"github.com/wengo/xlog"
+	"wengo/csvdata"
+	"wengo/dispatch"
+	"wengo/xlog"
 	"reflect"
 	"strings"
 	"sync"

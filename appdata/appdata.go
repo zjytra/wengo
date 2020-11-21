@@ -8,11 +8,11 @@
 package appdata
 
 import (
-	"github.com/panjf2000/ants"
-	"github.com/wengo/conf"
-	"github.com/wengo/csvdata"
-	"github.com/wengo/model"
-	"github.com/wengo/xengine"
+	"github.com/panjf2000/ants/v2"
+	"wengo/conf"
+	"wengo/csvdata"
+	"wengo/model"
+	"wengo/xengine"
 	"os"
 	"time"
 )

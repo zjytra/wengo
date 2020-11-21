@@ -8,8 +8,8 @@
 package appworldsv
 
 import (
-	"github.com/wengo/app/datacenter/dcmodel"
-	"github.com/wengo/xlog"
+	"wengo/app/datacenter/dcmodel"
+	"wengo/xlog"
 )
 
 var (

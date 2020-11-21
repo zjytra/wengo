@@ -6,7 +6,7 @@
 */
 package dbsys
 
-import "github.com/wengo/dispatch"
+import "wengo/dispatch"
 
 //数据库查询事件对象返回结构体对象
 type AsyncDBQueryData struct {

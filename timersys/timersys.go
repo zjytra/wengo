@@ -8,8 +8,8 @@
 package timersys
 
 import (
-	"github.com/RussellLuo/timingwheel"
-	"github.com/wengo/model"
+	"wengo/timingwheel"
+	"wengo/model"
 	"sync"
 	"time"
 )
@@ -29,21 +29,25 @@ func init()  {
 
 
 //定时器
-func NewWheelTimer(interval time.Duration,f func(),ob timingwheel.TimerEventObserver)  uint32{
+func NewWheelTimer(interval time.Duration,f func(),observer timingwheel.TimerEventObserver)  uint32{
 	if f == nil {
 		return 0
 	}
-	t := Twheel.ScheduleFunc(&EveryScheduler{interval},f,ob)
+	t := Twheel.ScheduleFunc(&EveryScheduler{interval}, func() {
+		observer.PostTimerEvent(f)
+	})
 	timeId := timeids.GetId()
 	timers.Store(timeId,t)
 	return timeId
 }
 //多少时间后执行
-func AfterFunc(interval time.Duration,f func(),ob timingwheel.TimerEventObserver) uint32 {
+func AfterFunc(interval time.Duration,f func(),observer timingwheel.TimerEventObserver) uint32 {
 	if f == nil {
 		return 0
 	}
-	t := Twheel.AfterFunc(interval,f,ob)
+	t := Twheel.AfterFunc(interval, func() {
+		observer.PostTimerEvent(f)
+	})
 	timeId := timeids.GetId()
 	timers.Store(timeId,t)
 	return timeId

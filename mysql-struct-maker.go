@@ -8,12 +8,12 @@
 package main
 
 import (
-	_ "github.com/go-sql-driver/mysql"
+	_ "go-sql-driver/mysql"
 	"database/sql"
 	"fmt"
-	"github.com/wengo/csvdata"
-	"github.com/wengo/dbsys"
-	"github.com/wengo/xutil"
+	"wengo/csvdata"
+	"wengo/dbsys"
+	"wengo/xutil"
 	"os"
 	"path/filepath"
 	"strings"

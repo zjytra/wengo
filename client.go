@@ -9,7 +9,7 @@ package main
 import (
 	"fmt"
 	"github.com/go-redis/redis"
-	"github.com/wengo/app"
+	"wengo/app"
 	"runtime"
 	"time"
 )

@@ -3,9 +3,9 @@ package csvdata
 
 import (
 	"fmt"
-	"github.com/wengo/csvparse"
-	"github.com/wengo/xutil"
-	"github.com/wengo/xlog"
+	"wengo/csvparse"
+	"wengo/xutil"
+	"wengo/xlog"
 	"sync/atomic"
 )
 

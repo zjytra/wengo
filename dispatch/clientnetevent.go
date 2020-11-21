@@ -9,8 +9,8 @@ package dispatch
 
 import (
 	"errors"
-	"github.com/wengo/network"
-	"github.com/wengo/xlog"
+	"wengo/network"
+	"wengo/xlog"
 )
 
 // 设置客戶端网络消息处理者

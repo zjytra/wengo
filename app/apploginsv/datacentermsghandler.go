@@ -8,18 +8,18 @@
 package apploginsv
 
 import (
-	"github.com/panjf2000/ants"
-	"github.com/wengo/app/netmsgsys"
-	"github.com/wengo/appdata"
-	"github.com/wengo/cmdconst"
-	"github.com/wengo/cmdconst/cmdaccount"
-	"github.com/wengo/cmdconst/cmddatacenter"
-	"github.com/wengo/csvdata"
-	"github.com/wengo/dispatch"
-	"github.com/wengo/network"
-	"github.com/wengo/protobuf/pb/dc_proto"
-	"github.com/wengo/timersys"
-	"github.com/wengo/xlog"
+	"github.com/panjf2000/ants/v2"
+	"wengo/app/netmsgsys"
+	"wengo/appdata"
+	"wengo/cmdconst"
+	"wengo/cmdconst/cmdaccount"
+	"wengo/cmdconst/cmddatacenter"
+	"wengo/csvdata"
+	"wengo/dispatch"
+	"wengo/network"
+	"wengo/protobuf/pb/dc_proto"
+	"wengo/timersys"
+	"wengo/xlog"
 	"time"
 )
 
@@ -95,10 +95,7 @@ func (this *DataCenterMsgHandler)OnRelease(){
 
 // 发送心跳给世界服
 func (this *DataCenterMsgHandler) SendHeartToWS() {
-	defer xlog.RecoverToLog(func() {
-		timersys.StopTimer(this.sndHeartTimer)
-		this.sndHeartTimer = timersys.NewWheelTimer(time.Second  * 30,this.SendHeartToWS,this.svDispSys)
-	})
+	
 	//给中心服发送心跳
 	sverSysInfo := &dc_proto.ServerSysInfo{}
 	sverSysInfo.FromAppId = appdata.AppID

@@ -9,16 +9,16 @@ package apploginsv
 
 import (
 	"github.com/golang/protobuf/proto"
-	"github.com/wengo/app/netmsgsys"
-	"github.com/wengo/cmdconst"
-	"github.com/wengo/cmdconst/cmdaccount"
-	"github.com/wengo/model"
-	"github.com/wengo/msgcode"
-	"github.com/wengo/network"
-	"github.com/wengo/protobuf/pb/account_proto"
-	"github.com/wengo/protobuf/pb/common_proto"
-	"github.com/wengo/xlog"
-	"github.com/wengo/xutil/strutil"
+	"wengo/app/netmsgsys"
+	"wengo/cmdconst"
+	"wengo/cmdconst/cmdaccount"
+	"wengo/model"
+	"wengo/msgcode"
+	"wengo/network"
+	"wengo/protobuf/pb/account_proto"
+	"wengo/protobuf/pb/common_proto"
+	"wengo/xlog"
+	"wengo/xutil/strutil"
 	"strings"
 )
 

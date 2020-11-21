@@ -10,12 +10,12 @@ package netmsgsys
 import (
 	"errors"
 	"fmt"
-	"github.com/wengo/appdata"
-	"github.com/wengo/dispatch"
-	"github.com/wengo/network"
-	"github.com/wengo/xlog"
-	"github.com/wengo/xutil"
-	"github.com/wengo/xutil/timeutil"
+	"wengo/appdata"
+	"wengo/dispatch"
+	"wengo/network"
+	"wengo/xlog"
+	"wengo/xutil"
+	"wengo/xutil/timeutil"
 )
 
 type  NetMsgSys struct {

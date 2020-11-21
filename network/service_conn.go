@@ -14,11 +14,11 @@ package network
 import (
 	"errors"
 	"github.com/golang/protobuf/proto"
-	"github.com/panjf2000/ants"
-	"github.com/wengo/appdata"
-	"github.com/wengo/csvdata"
-	"github.com/wengo/xlog"
-	"github.com/wengo/xutil/timeutil"
+	"github.com/panjf2000/ants/v2"
+	"wengo/appdata"
+	"wengo/csvdata"
+	"wengo/xlog"
+	"wengo/xutil/timeutil"
 	"net"
 )
 

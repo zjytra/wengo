@@ -8,8 +8,8 @@
 package dispatch
 
 import (
-	"github.com/wengo/appdata"
-	"github.com/wengo/xlog"
+	"wengo/appdata"
+	"wengo/xlog"
 	"sync"
 )
 

@@ -7,11 +7,11 @@
 package dbsys
 
 import (
-	"github.com/wengo/dispatch"
-	"github.com/wengo/xlog"
-	"github.com/wengo/xutil"
-	"github.com/wengo/xutil/strutil"
-	"github.com/wengo/xutil/timeutil"
+	"wengo/dispatch"
+	"wengo/xlog"
+	"wengo/xutil"
+	"wengo/xutil/strutil"
+	"wengo/xutil/timeutil"
 )
 
 // 异步写

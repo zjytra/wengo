@@ -7,9 +7,9 @@
 package apploginsv
 
 import (
-	"github.com/wengo/app/netmsgsys"
-	"github.com/wengo/appdata"
-	"github.com/wengo/xlog"
+	"wengo/app/netmsgsys"
+	"wengo/appdata"
+	"wengo/xlog"
 )
 
 // 每秒定时器

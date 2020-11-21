@@ -9,7 +9,7 @@
 package datacenter
 
 import (
-	"github.com/wengo/app/datacenter/dcmodel"
+	"wengo/app/datacenter/dcmodel"
 )
 
 var (

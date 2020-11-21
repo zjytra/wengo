@@ -10,8 +10,8 @@ package app
 import (
 	"bufio"
 	"fmt"
-	"github.com/wengo/csvdata"
-	"github.com/wengo/appdata"
+	"wengo/csvdata"
+	"wengo/appdata"
 	"os"
 	"strings"
 )
