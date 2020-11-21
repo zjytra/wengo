@@ -1,5 +1,0 @@
-调试|2020-08-19 21:14:18.414	invalid ConnectInterval, reset to 5s
-调试|2020-08-19 21:14:18.414	invalid PendingWriteNum, reset to 100
-调试|2020-08-19 21:14:18.414	client.Addr connet 127.0.0.1:20002 
-调试|2020-08-19 21:14:20.419	TCPClient dial to 127.0.0.1:20002 error: dial tcp 127.0.0.1:20002: connectex: No connection could be made because the target machine actively refused it.
-调试|2020-08-19 21:14:27.421	TCPClient dial to 127.0.0.1:20002 error: dial tcp 127.0.0.1:20002: connectex: No connection could be made because the target machine actively refused it.

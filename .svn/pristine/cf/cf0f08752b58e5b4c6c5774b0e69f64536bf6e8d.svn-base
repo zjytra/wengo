@@ -1,7 +1,0 @@
-dbname,ip,dbport,dbusername,dbpwd,maxopenconns,maxidleconns,readnum,writenum
-string,string,string,string,string,int,int,int8,int8
-#数据库名称,ip地址,端口号,用户名,密码,最大链接数,闲置连接数,读协程数量,写协程数量
-game_statisticsdb,127.0.0.1,3306,root,zjy0822,2000,1000,0,4
-gamedb,127.0.0.1,3306,root,zjy0822,2000,1000,5,5
-gamelogdb,127.0.0.1,3306,root,zjy0822,2000,1000,0,4
-information_schema,127.0.0.1,3306,root,zjy0822,2000,1000,0,4
